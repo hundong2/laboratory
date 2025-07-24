@@ -46,7 +46,7 @@ class FastZoomGame {
             reactionTime: document.getElementById('reactionTime'),
             accuracy: document.getElementById('accuracy'),
             zoomStatus: document.getElementById('zoomStatus'),
-            crosshair: document.getElementById('crosshair'),
+            sniperScope: document.getElementById('sniperScope'),
             startScreen: document.getElementById('startScreen'),
             endScreen: document.getElementById('endScreen'),
             finalScore: document.getElementById('finalScore'),
@@ -124,7 +124,7 @@ class FastZoomGame {
             const rect = this.canvas.getBoundingClientRect();
             this.mouseX = e.clientX - rect.left;
             this.mouseY = e.clientY - rect.top;
-            this.updateCrosshair();
+            this.updateSniperScope();
         });
         
         this.canvas.addEventListener('mousedown', (e) => {
@@ -134,15 +134,9 @@ class FastZoomGame {
             if (e.button === 0) { // Left click - shoot
                 this.weapon.shoot(this.mouseX, this.mouseY);
                 this.playShootSound();
-            } else if (e.button === 2) { // Right click - zoom
-                this.weapon.startZoom();
+            } else if (e.button === 2) { // Right click - toggle zoom
+                this.weapon.toggleZoom();
                 this.playZoomSound();
-            }
-        });
-        
-        this.canvas.addEventListener('mouseup', (e) => {
-            if (e.button === 2) { // Right click release
-                this.weapon.endZoom();
             }
         });
         
@@ -159,13 +153,11 @@ class FastZoomGame {
         });
     }
     
-    updateCrosshair() {
+    updateSniperScope() {
         if (this.isZoomed) {
-            this.ui.crosshair.style.display = 'block';
-            this.ui.crosshair.style.left = this.mouseX + 'px';
-            this.ui.crosshair.style.top = this.mouseY + 'px';
+            this.ui.sniperScope.style.display = 'block';
         } else {
-            this.ui.crosshair.style.display = 'none';
+            this.ui.sniperScope.style.display = 'none';
         }
     }
     
@@ -449,27 +441,35 @@ class FastZoomGame {
 class Weapon {
     constructor(game) {
         this.game = game;
-        this.crosshairSize = 30;
+        this.crosshairSize = 20;
+    }
+    
+    toggleZoom() {
+        if (this.game.isZoomed) {
+            this.endZoom();
+        } else {
+            this.startZoom();
+        }
     }
     
     startZoom() {
         this.game.isZoomed = true;
         this.game.zoomLevel = this.game.maxZoomLevel;
-        this.game.updateCrosshair();
+        this.game.updateSniperScope();
     }
     
     endZoom() {
         this.game.isZoomed = false;
         this.game.zoomLevel = 1;
-        this.game.updateCrosshair();
+        this.game.updateSniperScope();
     }
     
     shoot(x, y) {
         this.game.totalShots++;
         
         // Calculate accuracy based on zoom
-        const accuracy = this.game.isZoomed ? 1.0 : 0.4;
-        const spread = this.game.isZoomed ? 3 : 40;
+        const accuracy = this.game.isZoomed ? 1.0 : 0.3;
+        const spread = this.game.isZoomed ? 2 : 50;
         
         // Add spread to shot
         const actualX = x + (Math.random() - 0.5) * spread * (2 - accuracy);
@@ -488,11 +488,11 @@ class Weapon {
         // Add muzzle flash effect
         this.addMuzzleFlash(x, y);
         
-        // End zoom after shooting
+        // End zoom after shooting (like CS)
         if (this.game.isZoomed) {
             setTimeout(() => {
                 this.endZoom();
-            }, 100);
+            }, 150);
         }
         
         this.game.updateUI();
@@ -515,20 +515,45 @@ class Weapon {
             // Draw simple crosshair when not zoomed
             ctx.save();
             ctx.strokeStyle = '#ffffff';
-            ctx.lineWidth = 2;
-            ctx.globalAlpha = 0.7;
+            ctx.lineWidth = 1.5;
+            ctx.globalAlpha = 0.8;
+            ctx.shadowColor = '#000000';
+            ctx.shadowBlur = 2;
             
-            // Horizontal line
+            const centerX = this.game.mouseX;
+            const centerY = this.game.mouseY;
+            const size = this.crosshairSize;
+            const gap = 4;
+            
+            // Top line
             ctx.beginPath();
-            ctx.moveTo(this.game.mouseX - 15, this.game.mouseY);
-            ctx.lineTo(this.game.mouseX + 15, this.game.mouseY);
+            ctx.moveTo(centerX, centerY - gap);
+            ctx.lineTo(centerX, centerY - size);
             ctx.stroke();
             
-            // Vertical line
+            // Bottom line
             ctx.beginPath();
-            ctx.moveTo(this.game.mouseX, this.game.mouseY - 15);
-            ctx.lineTo(this.game.mouseX, this.game.mouseY + 15);
+            ctx.moveTo(centerX, centerY + gap);
+            ctx.lineTo(centerX, centerY + size);
             ctx.stroke();
+            
+            // Left line
+            ctx.beginPath();
+            ctx.moveTo(centerX - gap, centerY);
+            ctx.lineTo(centerX - size, centerY);
+            ctx.stroke();
+            
+            // Right line
+            ctx.beginPath();
+            ctx.moveTo(centerX + gap, centerY);
+            ctx.lineTo(centerX + size, centerY);
+            ctx.stroke();
+            
+            // Center dot
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 1, 0, Math.PI * 2);
+            ctx.fill();
             
             ctx.restore();
         }
@@ -557,7 +582,7 @@ class Target {
         this.type = Math.floor(Math.random() * 3);
         const basePoints = [15, 25, 40][this.type];
         this.points = basePoints + Math.floor(round / 2) * 5; // Bonus points for higher rounds
-        this.colors = ['#90EE90', '#FFA500', '#FF6347'][this.type];
+        this.colors = ['#8B7355', '#CD853F', '#8B4513'][this.type]; // Zombie skin tones
         
         // Adjust size based on type (higher point targets are smaller)
         this.size = this.baseSize * [1.0, 0.8, 0.6][this.type];

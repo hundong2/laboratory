@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패줌 (패스트 줌) - FPS 반응속도 게임</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: white;
+            overflow: hidden;
+            cursor: none;
+        }
+        
+        #gameContainer {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+        
+        #gameCanvas {
+            background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 50%, #8FBC8F 100%);
+            cursor: none;
+            flex: 1;
+        }
+        
+        #ui {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        #leftPanel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ff6b6b;
+        }
+        
+        #rightPanel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #4ecdc4;
+            text-align: right;
+        }
+        
+        .panel-item {
+            margin: 8px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        #timer {
+            color: #ff6b6b;
+            font-size: 24px;
+        }
+        
+        #score {
+            color: #4ecdc4;
+            font-size: 20px;
+        }
+        
+        #round {
+            color: #feca57;
+            font-size: 18px;
+        }
+        
+        #crosshair {
+            position: absolute;
+            pointer-events: none;
+            z-index: 20;
+            display: none;
+        }
+        
+        .crosshair-line {
+            position: absolute;
+            background: #ff0000;
+            transform: translate(-50%, -50%);
+        }
+        
+        .crosshair-horizontal {
+            width: 30px;
+            height: 2px;
+        }
+        
+        .crosshair-vertical {
+            width: 2px;
+            height: 30px;
+        }
+        
+        #startScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        
+        #gameTitle {
+            font-size: 48px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        #startButton {
+            padding: 15px 30px;
+            font-size: 24px;
+            background: #4ecdc4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            pointer-events: auto;
+        }
+        
+        #startButton:hover {
+            background: #45b7aa;
+            transform: scale(1.05);
+        }
+        
+        #gameInstructions {
+            max-width: 600px;
+            text-align: center;
+            margin: 20px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+        
+        #endScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        
+        #finalScore {
+            font-size: 36px;
+            color: #4ecdc4;
+            margin-bottom: 30px;
+        }
+        
+        #leaderboard {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            min-width: 400px;
+        }
+        
+        .leaderboard-entry {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        #replayButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #feca57;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            pointer-events: auto;
+        }
+        
+        #weaponInfo {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .zoom-indicator {
+            color: #feca57;
+        }
+        
+        .accuracy-indicator {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="ui">
+            <div id="leftPanel">
+                <div class="panel-item">시간: <span id="timer">60</span></div>
+                <div class="panel-item">라운드: <span id="round">1/10</span></div>
+            </div>
+            
+            <div id="rightPanel">
+                <div class="panel-item">점수: <span id="score">0</span></div>
+                <div class="panel-item">반응속도: <span id="reactionTime">0ms</span></div>
+                <div class="panel-item">명중률: <span id="accuracy">0%</span></div>
+            </div>
+            
+            <div id="weaponInfo">
+                <div>우클릭: 줌</div>
+                <div>좌클릭: 발사</div>
+                <div class="zoom-indicator">줌 상태: <span id="zoomStatus">OFF</span></div>
+            </div>
+        </div>
+        
+        <div id="crosshair">
+            <div class="crosshair-line crosshair-horizontal"></div>
+            <div class="crosshair-line crosshair-vertical"></div>
+        </div>
+        
+        <div id="startScreen">
+            <h1 id="gameTitle">패줌 (패스트 줌)</h1>
+            <div id="gameInstructions">
+                <p>마우스 반응속도와 정확도를 측정하는 FPS 게임입니다.</p>
+                <p><strong>조작법:</strong></p>
+                <p>• 우클릭: 스나이퍼 줌 (정확도 증가)</p>
+                <p>• 좌클릭: 발사</p>
+                <p>• 줌 없이 발사하면 정확도가 떨어집니다</p>
+                <p><strong>게임 규칙:</strong></p>
+                <p>• 총 10라운드, 각 라운드 60초 제한</p>
+                <p>• 라운드가 진행될수록 타겟이 빨라지고 작아집니다</p>
+                <p>• 다양한 좀비 타겟을 처치하여 점수를 획득하세요!</p>
+            </div>
+            <button id="startButton">게임 시작</button>
+        </div>
+        
+        <div id="endScreen">
+            <h2>게임 종료!</h2>
+            <div id="finalScore">최종 점수: 0</div>
+            <div id="leaderboard">
+                <h3>순위표</h3>
+                <div id="leaderboardList"></div>
+            </div>
+            <button id="replayButton">다시 플레이</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

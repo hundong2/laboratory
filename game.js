@@ -27,6 +27,10 @@ class FastZoomGame {
         this.mouseX = 0;
         this.mouseY = 0;
         
+        // Visual effects
+        this.showMuzzleFlash = false;
+        this.muzzleFlashTimer = 0;
+        
         // Targets
         this.targets = [];
         this.maxTargets = 3;
@@ -134,6 +138,9 @@ class FastZoomGame {
             if (e.button === 0) { // Left click - shoot
                 this.weapon.shoot(this.mouseX, this.mouseY);
                 this.playShootSound();
+                // Trigger muzzle flash
+                this.showMuzzleFlash = true;
+                this.muzzleFlashTimer = 5; // frames to show flash
             } else if (e.button === 2) { // Right click - toggle zoom
                 this.weapon.toggleZoom();
                 this.playZoomSound();
@@ -333,6 +340,14 @@ class FastZoomGame {
     }
     
     update() {
+        // Update muzzle flash timer
+        if (this.muzzleFlashTimer > 0) {
+            this.muzzleFlashTimer--;
+            if (this.muzzleFlashTimer <= 0) {
+                this.showMuzzleFlash = false;
+            }
+        }
+        
         // Update targets
         for (let i = this.targets.length - 1; i >= 0; i--) {
             this.targets[i].update();
@@ -371,6 +386,11 @@ class FastZoomGame {
         
         // Draw weapon/crosshair
         this.weapon.draw(this.ctx);
+        
+        // Draw gun barrel (always visible when not zoomed)
+        if (!this.isZoomed) {
+            this.drawGunBarrel(this.ctx);
+        }
     }
     
     drawBackground() {
@@ -413,6 +433,79 @@ class FastZoomGame {
     
     loadLeaderboard() {
         this.displayLeaderboard();
+    }
+    
+    drawGunBarrel(ctx) {
+        if (this.gameState !== 'playing') return;
+        
+        ctx.save();
+        
+        // Calculate gun position based on mouse
+        const gunLength = 100;
+        const gunWidth = 20;
+        
+        // Calculate angle from bottom right to mouse
+        const gunStartX = this.canvas.width - 60;
+        const gunStartY = this.canvas.height - 60;
+        const angle = Math.atan2(this.mouseY - gunStartY, this.mouseX - gunStartX);
+        
+        // Draw gun barrel shadow
+        ctx.globalAlpha = 0.3;
+        ctx.fillStyle = '#000';
+        ctx.save();
+        ctx.translate(gunStartX + 2, gunStartY + 2);
+        ctx.rotate(angle);
+        ctx.fillRect(0, -gunWidth/2, gunLength, gunWidth);
+        ctx.restore();
+        
+        ctx.globalAlpha = 1;
+        
+        // Main gun barrel (dark metal)
+        ctx.fillStyle = '#2c2c2c';
+        ctx.save();
+        ctx.translate(gunStartX, gunStartY);
+        ctx.rotate(angle);
+        ctx.fillRect(0, -gunWidth/2, gunLength, gunWidth);
+        ctx.restore();
+        
+        // Gun barrel highlights (metallic effect)
+        ctx.fillStyle = '#444';
+        ctx.save();
+        ctx.translate(gunStartX, gunStartY);
+        ctx.rotate(angle);
+        ctx.fillRect(0, -gunWidth/2, gunLength, gunWidth/3);
+        ctx.restore();
+        
+        // Gun muzzle (tip)
+        ctx.fillStyle = '#1a1a1a';
+        ctx.save();
+        ctx.translate(gunStartX, gunStartY);
+        ctx.rotate(angle);
+        ctx.fillRect(gunLength - 10, -gunWidth/2 + 2, 10, gunWidth - 4);
+        ctx.restore();
+        
+        // Muzzle flash effect when shooting
+        if (this.showMuzzleFlash) {
+            ctx.globalAlpha = 0.8;
+            ctx.fillStyle = '#ffff00';
+            ctx.save();
+            ctx.translate(gunStartX, gunStartY);
+            ctx.rotate(angle);
+            
+            // Random muzzle flash shape
+            for (let i = 0; i < 6; i++) {
+                const flashAngle = (Math.PI * 2 / 6) * i;
+                const flashRadius = 10 + Math.random() * 8;
+                const flashX = gunLength + Math.cos(flashAngle) * flashRadius;
+                const flashY = Math.sin(flashAngle) * flashRadius;
+                ctx.beginPath();
+                ctx.arc(flashX, flashY, 2, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.restore();
+        }
+        
+        ctx.restore();
     }
     
     displayLeaderboard() {
@@ -511,52 +604,8 @@ class Weapon {
     }
     
     draw(ctx) {
-        if (!this.game.isZoomed) {
-            // Draw simple crosshair when not zoomed
-            ctx.save();
-            ctx.strokeStyle = '#ffffff';
-            ctx.lineWidth = 1.5;
-            ctx.globalAlpha = 0.8;
-            ctx.shadowColor = '#000000';
-            ctx.shadowBlur = 2;
-            
-            const centerX = this.game.mouseX;
-            const centerY = this.game.mouseY;
-            const size = this.crosshairSize;
-            const gap = 4;
-            
-            // Top line
-            ctx.beginPath();
-            ctx.moveTo(centerX, centerY - gap);
-            ctx.lineTo(centerX, centerY - size);
-            ctx.stroke();
-            
-            // Bottom line
-            ctx.beginPath();
-            ctx.moveTo(centerX, centerY + gap);
-            ctx.lineTo(centerX, centerY + size);
-            ctx.stroke();
-            
-            // Left line
-            ctx.beginPath();
-            ctx.moveTo(centerX - gap, centerY);
-            ctx.lineTo(centerX - size, centerY);
-            ctx.stroke();
-            
-            // Right line
-            ctx.beginPath();
-            ctx.moveTo(centerX + gap, centerY);
-            ctx.lineTo(centerX + size, centerY);
-            ctx.stroke();
-            
-            // Center dot
-            ctx.fillStyle = '#ffffff';
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, 1, 0, Math.PI * 2);
-            ctx.fill();
-            
-            ctx.restore();
-        }
+        // Only draw crosshair when zoomed (handled by scope overlay)
+        // No crosshair when not zoomed for realistic FPS experience
     }
 }
 

@@ -6,32 +6,37 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     raise ValueError("GEMINI_API_KEY environment variable not set.")
 
-# Only import and configure Gemini if API key is available
+# Only import and configure Gemini if API key is available and valid
 try:
     import google.generativeai as genai
     
-    genai.configure(api_key=GEMINI_API_KEY)
-    generation_config = {
-        "temperature": 0.7,
-        "top_p": 0.95,  
-        "top_k": 40,
-        "max_output_tokens": 4096,
-    }
-    safety_settings = [
-        {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-        {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-        {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-        {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-    ]
+    # Test if the API key is valid by making a simple check
+    if GEMINI_API_KEY and not GEMINI_API_KEY.startswith(('test', 'fake', 'dummy')) and len(GEMINI_API_KEY) > 20:
+        genai.configure(api_key=GEMINI_API_KEY)
+        generation_config = {
+            "temperature": 0.7,
+            "top_p": 0.95,  
+            "top_k": 40,
+            "max_output_tokens": 4096,
+        }
+        safety_settings = [
+            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+        ]
 
-    # Use gemini-pro for text generation 
-    text_model = genai.GenerativeModel(
-        model_name="gemini-pro",
-        generation_config=generation_config,
-        safety_settings=safety_settings
-    )
-    API_AVAILABLE = True
-    print("✅ Gemini API configured successfully")
+        # Use gemini-pro for text generation 
+        text_model = genai.GenerativeModel(
+            model_name="gemini-pro",
+            generation_config=generation_config,
+            safety_settings=safety_settings
+        )
+        API_AVAILABLE = True
+        print("✅ Gemini API configured successfully")
+    else:
+        print("⚠️ Invalid or test API key detected, using fallback content")
+        API_AVAILABLE = False
     
 except Exception as e:
     print(f"⚠️ Warning: Could not configure Gemini API: {e}")

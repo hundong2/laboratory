@@ -1,0 +1,30 @@
+{
+  "ai_generated_images": {
+    "레이어드 밥": "https://via.placeholder.com/400x300/667eea/ffffff?text=Layered+Bob",
+    "커튼 뱅": "https://via.placeholder.com/400x300/4ecdc4/ffffff?text=Curtain+Bang",
+    "울프 컷": "https://via.placeholder.com/400x300/feca57/000000?text=Wolf+Cut",
+    "픽시 컷": "https://via.placeholder.com/400x300/ff6b6b/ffffff?text=Pixie+Cut",
+    "롱 레이어": "https://via.placeholder.com/400x300/a55eea/ffffff?text=Long+Layer",
+    "셰그 컷": "https://via.placeholder.com/400x300/26de81/ffffff?text=Shag+Cut",
+    "프렌치 밥": "https://via.placeholder.com/400x300/fd9644/ffffff?text=French+Bob",
+    "비치 웨이브": "https://via.placeholder.com/400x300/54a0ff/ffffff?text=Beach+Wave",
+    "블런트 컷": "https://via.placeholder.com/400x300/5f27cd/ffffff?text=Blunt+Cut",
+    "하이브리드 컷": "https://via.placeholder.com/400x300/00d2d3/ffffff?text=Hybrid+Cut"
+  },
+  "celebrity_images": {
+    "아이유 스타일": "https://via.placeholder.com/400x300/ff9ff3/000000?text=IU+Style",
+    "태연 스타일": "https://via.placeholder.com/400x300/54a0ff/ffffff?text=Taeyeon+Style",
+    "블랙핑크 제니 스타일": "https://via.placeholder.com/400x300/2f3542/ffffff?text=Jennie+Style",
+    "수지 스타일": "https://via.placeholder.com/400x300/ff6348/ffffff?text=Suzy+Style",
+    "전지현 스타일": "https://via.placeholder.com/400x300/7bed9f/000000?text=Jun+Ji+Hyun",
+    "송혜교 스타일": "https://via.placeholder.com/400x300/ff5252/ffffff?text=Song+Hye+Kyo",
+    "박신혜 스타일": "https://via.placeholder.com/400x300/40407a/ffffff?text=Park+Shin+Hye",
+    "한소희 스타일": "https://via.placeholder.com/400x300/706fd3/ffffff?text=Han+So+Hee",
+    "김고은 스타일": "https://via.placeholder.com/400x300/f8b500/000000?text=Kim+Go+Eun",
+    "김태리 스타일": "https://via.placeholder.com/400x300/ff3838/ffffff?text=Kim+Tae+Ri"
+  },
+  "default_image": {
+    "ai_trend": "https://via.placeholder.com/400x300/667eea/ffffff?text=AI+Generated+Hair+Style",
+    "celebrity": "https://via.placeholder.com/400x300/764ba2/ffffff?text=Celebrity+Hair+Style"
+  }
+}

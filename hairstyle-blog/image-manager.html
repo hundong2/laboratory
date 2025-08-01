@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤어스타일 블로그 - 이미지 관리</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        .section h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .image-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .image-item label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .image-item input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .image-item input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        .preview {
+            margin-top: 10px;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: none;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 12px 24px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #5a6fd8;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            font-family: monospace;
+            white-space: pre-wrap;
+            display: none;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        .nav-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            border: 1px solid #667eea;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🖼️ 헤어스타일 블로그 이미지 관리</h1>
+            <p>이곳에서 블로그에 사용할 이미지 URL을 설정할 수 있습니다.</p>
+        </div>
+
+        <div class="instructions">
+            <h4>📋 사용 방법</h4>
+            <p>1. 각 헤어스타일에 대한 이미지 URL을 입력하세요</p>
+            <p>2. "설정 생성" 버튼을 클릭하여 JSON 설정을 생성하세요</p>
+            <p>3. 생성된 JSON을 복사하여 <code>image_config.json</code> 파일에 저장하세요</p>
+            <p>4. <code>generate_article.py</code>를 실행하여 이미지가 포함된 기사를 생성하세요</p>
+        </div>
+
+        <div class="section">
+            <h3>🎨 AI 생성 헤어스타일 이미지</h3>
+            <div class="image-grid" id="aiImages">
+                <div class="image-item">
+                    <label>레이어드 밥</label>
+                    <input type="url" data-key="레이어드 밥" placeholder="https://example.com/layered-bob.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>커튼 뱅</label>
+                    <input type="url" data-key="커튼 뱅" placeholder="https://example.com/curtain-bang.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>울프 컷</label>
+                    <input type="url" data-key="울프 컷" placeholder="https://example.com/wolf-cut.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>픽시 컷</label>
+                    <input type="url" data-key="픽시 컷" placeholder="https://example.com/pixie-cut.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>롱 레이어</label>
+                    <input type="url" data-key="롱 레이어" placeholder="https://example.com/long-layer.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>셰그 컷</label>
+                    <input type="url" data-key="셰그 컷" placeholder="https://example.com/shag-cut.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>프렌치 밥</label>
+                    <input type="url" data-key="프렌치 밥" placeholder="https://example.com/french-bob.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>비치 웨이브</label>
+                    <input type="url" data-key="비치 웨이브" placeholder="https://example.com/beach-wave.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>블런트 컷</label>
+                    <input type="url" data-key="블런트 컷" placeholder="https://example.com/blunt-cut.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>하이브리드 컷</label>
+                    <input type="url" data-key="하이브리드 컷" placeholder="https://example.com/hybrid-cut.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>⭐ 연예인 헤어스타일 이미지</h3>
+            <div class="image-grid" id="celebrityImages">
+                <div class="image-item">
+                    <label>아이유 스타일</label>
+                    <input type="url" data-key="아이유 스타일" placeholder="https://example.com/iu-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>태연 스타일</label>
+                    <input type="url" data-key="태연 스타일" placeholder="https://example.com/taeyeon-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>블랙핑크 제니 스타일</label>
+                    <input type="url" data-key="블랙핑크 제니 스타일" placeholder="https://example.com/jennie-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>수지 스타일</label>
+                    <input type="url" data-key="수지 스타일" placeholder="https://example.com/suzy-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>전지현 스타일</label>
+                    <input type="url" data-key="전지현 스타일" placeholder="https://example.com/jeon-ji-hyun-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>송혜교 스타일</label>
+                    <input type="url" data-key="송혜교 스타일" placeholder="https://example.com/song-hye-kyo-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>박신혜 스타일</label>
+                    <input type="url" data-key="박신혜 스타일" placeholder="https://example.com/park-shin-hye-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>한소희 스타일</label>
+                    <input type="url" data-key="한소희 스타일" placeholder="https://example.com/han-so-hee-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>김고은 스타일</label>
+                    <input type="url" data-key="김고은 스타일" placeholder="https://example.com/kim-go-eun-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>김태리 스타일</label>
+                    <input type="url" data-key="김태리 스타일" placeholder="https://example.com/kim-tae-ri-style.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🔧 기본 이미지 설정</h3>
+            <div class="image-grid">
+                <div class="image-item">
+                    <label>AI 트렌드 기본 이미지</label>
+                    <input type="url" id="defaultAI" placeholder="https://example.com/default-ai.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+                <div class="image-item">
+                    <label>연예인 기본 이미지</label>
+                    <input type="url" id="defaultCelebrity" placeholder="https://example.com/default-celebrity.jpg">
+                    <img class="preview" alt="미리보기">
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-primary" onclick="generateConfig()">📋 설정 생성</button>
+            <button class="btn btn-secondary" onclick="clearAll()">🗑️ 전체 초기화</button>
+        </div>
+
+        <div class="output" id="output"></div>
+
+        <div class="nav-links">
+            <a href="index.html">← 블로그 메인</a>
+            <a href="README_IMAGE_SUPPORT.md" target="_blank">📖 사용 가이드</a>
+        </div>
+    </div>
+
+    <script>
+        // Image preview functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input[type="url"]');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    const preview = this.nextElementSibling;
+                    if (this.value && isValidUrl(this.value)) {
+                        preview.src = this.value;
+                        preview.style.display = 'block';
+                        preview.onerror = function() {
+                            this.style.display = 'none';
+                        };
+                    } else {
+                        preview.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        function isValidUrl(string) {
+            try {
+                new URL(string);
+                return true;
+            } catch (_) {
+                return false;
+            }
+        }
+
+        function generateConfig() {
+            const config = {
+                ai_generated_images: {},
+                celebrity_images: {},
+                default_image: {}
+            };
+
+            // Collect AI generated images
+            const aiInputs = document.querySelectorAll('#aiImages input[type="url"]');
+            aiInputs.forEach(input => {
+                if (input.value.trim()) {
+                    config.ai_generated_images[input.dataset.key] = input.value.trim();
+                }
+            });
+
+            // Collect celebrity images
+            const celebrityInputs = document.querySelectorAll('#celebrityImages input[type="url"]');
+            celebrityInputs.forEach(input => {
+                if (input.value.trim()) {
+                    config.celebrity_images[input.dataset.key] = input.value.trim();
+                }
+            });
+
+            // Collect default images
+            const defaultAI = document.getElementById('defaultAI').value.trim();
+            const defaultCelebrity = document.getElementById('defaultCelebrity').value.trim();
+            
+            if (defaultAI) config.default_image.ai_trend = defaultAI;
+            if (defaultCelebrity) config.default_image.celebrity = defaultCelebrity;
+
+            // Display the configuration
+            const output = document.getElementById('output');
+            output.textContent = JSON.stringify(config, null, 2);
+            output.style.display = 'block';
+
+            // Scroll to output
+            output.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function clearAll() {
+            if (confirm('모든 입력을 초기화하시겠습니까?')) {
+                const inputs = document.querySelectorAll('input[type="url"]');
+                inputs.forEach(input => {
+                    input.value = '';
+                    const preview = input.nextElementSibling;
+                    if (preview && preview.tagName === 'IMG') {
+                        preview.style.display = 'none';
+                    }
+                });
+                
+                const output = document.getElementById('output');
+                output.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

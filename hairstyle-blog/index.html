@@ -1,15 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monthly Hairstyle Trends</title>
+    <title>월간 헤어스타일 트렌드 블로그</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 1.2em;
+            margin: 0;
+            opacity: 0.9;
+        }
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #555;
+        }
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .month-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .month-list li {
+            margin-bottom: 15px;
+        }
+        .month-list a {
+            display: block;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
+            color: #333;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        .month-list a:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .month-list a:active {
+            transform: translateY(0);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9em;
+        }
+        .coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+            background: #f8f9fa !important;
+            color: #6c757d !important;
+        }
+        .coming-soon:hover {
+            background: #f8f9fa !important;
+            color: #6c757d !important;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 20px 10px; }
+            .header h1 { font-size: 2.5em; }
+            .content { padding: 25px; }
+            .month-list a { padding: 15px 20px; font-size: 1em; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Monthly Hairstyle Trends</h1>
-    <ul>
-        <li><a href="articles/2025-01.html">2025년 1월</a></li>
+    <div class="container">
+        <div class="header">
+            <h1>💇‍♀️ 헤어스타일 트렌드</h1>
+            <p>매월 업데이트되는 최신 헤어스타일 트렌드를 만나보세요</p>
+        </div>
+        
+        <div class="content">
+            <div class="intro">
+                <h2>🌟 월간 트렌드 아카이브</h2>
+                <p>AI가 분석한 최신 헤어스타일 트렌드와 연예계 헤어스타일을 매월 소개합니다.<br>
+                아래 링크를 클릭하여 각 월의 트렌드를 확인해보세요!</p>
+            </div>
+            
+            <ul class="month-list">
+                <li><a href="articles/2025-01.html">2025년 1월 ✨</a></li>
+                        <li><a href="articles/2025-08.html">2025년 8월</a></li>
         <!-- Links to monthly articles will be added here -->
-    </ul>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>🤖 AI를 활용하여 매월 1일 자동으로 업데이트됩니다</p>
+            <p>© 2025 Hair Style Trends Blog</p>
+        </div>
+    </div>
 </body>
 </html>

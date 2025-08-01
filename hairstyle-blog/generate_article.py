@@ -249,7 +249,8 @@ def generate_html_content(year, month, month_name_kr):
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' https: data:;">
     <title>{year}년 {month_name_kr} 최신트랜드</title>
     <style>
         body {{

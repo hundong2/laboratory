@@ -4,7 +4,7 @@
 
 ## TODO
 
-- [ ] 새 분석 결과 README 경로를 여기에 추가하세요. 예: `[example-topic/README.md](example-topic/README.md)` - YYYY-MM-DD
+- [ ] [Nexus: 에이전트형 시계열 예측](nexus-agentic-time-series-forecasting/README.md) - 2026-07-16
 
 ## 목적
 

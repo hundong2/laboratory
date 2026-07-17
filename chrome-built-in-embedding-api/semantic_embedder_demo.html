@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chrome SemanticEmbedder Demo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f8fb;
+      color: #1c2430;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .panel {
+      margin-top: 20px;
+      padding: 18px;
+      border: 1px solid #d9dee8;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    label {
+      display: block;
+      margin: 14px 0 6px;
+      font-weight: 650;
+    }
+
+    textarea,
+    select,
+    button {
+      font: inherit;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 92px;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #c8cfdb;
+      border-radius: 6px;
+      resize: vertical;
+    }
+
+    select {
+      min-width: 240px;
+      padding: 8px;
+      border: 1px solid #c8cfdb;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    button {
+      margin-top: 16px;
+      padding: 10px 14px;
+      border: 0;
+      border-radius: 6px;
+      background: #1557d8;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: #8994a8;
+      cursor: not-allowed;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      padding: 14px;
+      border-radius: 6px;
+      background: #111827;
+      color: #e8eefc;
+    }
+
+    .note {
+      color: #526070;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Chrome SemanticEmbedder Demo</h1>
+    <p class="note">
+      Chrome Canary 데스크톱에서 <code>chrome://flags/#semantic-embedder-api</code>를 활성화한 뒤 실행하세요.
+      모델 다운로드가 끝나기 전에는 사용 가능 상태가 아닐 수 있습니다.
+    </p>
+
+    <section class="panel">
+      <label for="taskType">taskType</label>
+      <select id="taskType">
+        <option value="semantic-similarity">semantic-similarity</option>
+        <option value="retrieval-query">retrieval-query</option>
+        <option value="retrieval-document">retrieval-document</option>
+        <option value="classification">classification</option>
+        <option value="clustering">clustering</option>
+      </select>
+
+      <label for="textA">Text A</label>
+      <textarea id="textA">The quick brown fox jumps over the lazy dog.</textarea>
+
+      <label for="textB">Text B</label>
+      <textarea id="textB">A fast, dark-colored fox leaps over a resting hound.</textarea>
+
+      <button id="runButton" type="button">임베딩 비교</button>
+    </section>
+
+    <section class="panel">
+      <h2>Result</h2>
+      <pre id="output">대기 중</pre>
+    </section>
+  </main>
+
+  <script>
+    const output = document.querySelector("#output");
+    const runButton = document.querySelector("#runButton");
+
+    function cosineSimilarity(vecA, vecB) {
+      if (!vecA || !vecB || vecA.length !== vecB.length) return 0;
+      let dotProduct = 0;
+      let normA = 0;
+      let normB = 0;
+      for (let i = 0; i < vecA.length; i += 1) {
+        dotProduct += vecA[i] * vecB[i];
+        normA += vecA[i] * vecA[i];
+        normB += vecB[i] * vecB[i];
+      }
+      if (normA === 0 || normB === 0) return 0;
+      return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+    }
+
+    async function runDemo() {
+      runButton.disabled = true;
+      output.textContent = "availability() 확인 중...";
+
+      try {
+        if (!("SemanticEmbedder" in globalThis)) {
+          output.textContent = "SemanticEmbedder 전역 객체가 없습니다. Chrome Canary, 데스크톱 환경, semantic embedder flag를 확인하세요.";
+          return;
+        }
+
+        const availability = await SemanticEmbedder.availability();
+        if (availability !== "available") {
+          output.textContent = `현재 상태: ${availability}\n모델 다운로드가 끝난 뒤 다시 시도하세요. 현재 문서 기준 다운로드 진행률 이벤트는 없습니다.`;
+          return;
+        }
+
+        const taskType = document.querySelector("#taskType").value;
+        const textA = document.querySelector("#textA").value;
+        const textB = document.querySelector("#textB").value;
+
+        const embedder = await SemanticEmbedder.create();
+        try {
+          const resultA = await embedder.embed(textA, { taskType });
+          const resultB = await embedder.embed(textB, { taskType });
+          const vectorA = resultA.embeddings[0].values;
+          const vectorB = resultB.embeddings[0].values;
+          const similarity = cosineSimilarity(vectorA, vectorB);
+
+          output.textContent = [
+            `taskType: ${taskType}`,
+            `dimension A: ${vectorA.length}`,
+            `dimension B: ${vectorB.length}`,
+            `cosine similarity: ${similarity}`,
+            "",
+            "첫 8개 값:",
+            Array.from(vectorA.slice(0, 8)).map((value) => value.toFixed(5)).join(", ")
+          ].join("\n");
+        } finally {
+          embedder.destroy();
+        }
+      } catch (error) {
+        output.textContent = `${error.name}: ${error.message}`;
+      } finally {
+        runButton.disabled = false;
+      }
+    }
+
+    runButton.addEventListener("click", runDemo);
+  </script>
+</body>
+</html>

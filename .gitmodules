@@ -1,0 +1,3 @@
+[submodule "SenseNova-Vision"]
+	path = SenseNova-Vision
+	url = https://github.com/hundong2/SenseNova-Vision.git

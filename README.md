@@ -4,6 +4,8 @@
 
 ## TODO
 
+- [ ] [SEED: Self-Evolving On-Policy Distillation](seed-self-evolving-opd/README.md) - 2026-07-19
+- [ ] [S2Vec: 자기지도 지리공간 임베딩](s2vec-geospatial-embeddings/README.md) - 2026-07-18
 - [ ] [pdf-inspector 오픈소스 정리](Opensource/README.md) - 2026-07-17
 - [ ] [2026년 7월 중순 VLM 트렌드 카테고리별 학습 자료](vlm-trending-categories-2026-07/README.md) - 2026-07-17
 - [ ] [2026년 7월 VLM 인기 논문 Top 5 카테고리 분석](vlm-trending-papers-2026-07/README.md) - 2026-07-17

@@ -7,3 +7,6 @@
 [submodule "Hands-On-AI-Engineering"]
 	path = Hands-On-AI-Engineering
 	url = https://github.com/hundong2/Hands-On-AI-Engineering.git
+[submodule "tabfm"]
+	path = tabfm
+	url = https://github.com/hundong2/tabfm.git

@@ -1,3 +1,9 @@
 [submodule "SenseNova-Vision"]
 	path = SenseNova-Vision
 	url = https://github.com/hundong2/SenseNova-Vision.git
+[submodule "orca"]
+	path = orca
+	url = https://github.com/hundong2/orca.git
+[submodule "Hands-On-AI-Engineering"]
+	path = Hands-On-AI-Engineering
+	url = https://github.com/hundong2/Hands-On-AI-Engineering.git

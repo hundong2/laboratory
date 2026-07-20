@@ -4,6 +4,10 @@
 
 ## TODO
 
+- [ ] [에이전트형 세계 모델](agentic-world-models/README.md) - 2026-07-20
+- [ ] [Hands-On AI Engineering 한국어 학습 가이드](Hands-On-AI-Engineering/guide/README.md) - 2026-07-20
+- [ ] [Kimi K3: 개방형 3T급 멀티모달 에이전트 모델](kimi-k3/README.md) - 2026-07-20
+- [ ] [Orca 한국어 사용 가이드](orca/guide.md) - 2026-07-20
 - [ ] [NVIDIA Nemotron 3 Nano Omni](nvidia-nemotron-3-nano-omni/README.md) - 2026-07-20
 - [ ] [SEED: Self-Evolving On-Policy Distillation](seed-self-evolving-opd/README.md) - 2026-07-19
 - [ ] [S2Vec: 자기지도 지리공간 임베딩](s2vec-geospatial-embeddings/README.md) - 2026-07-18

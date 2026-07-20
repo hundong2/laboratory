@@ -105,18 +105,19 @@ git submodule update --init --recursive <repository-name>
 - 기초 문법 확인에서 끝내지 않고 최소 실행, 핵심 기능 활용, 오류 처리 또는 고급 패턴으로 난이도가 이어지게 구성한다.
 - 새 예제가 실제 제품 코드나 빌드에 영향을 주지 않도록 격리하고, 가능한 범위에서 저장소의 공식 테스트·lint·format 명령으로 검증한다.
 
-### 5. Commit, Push and Pull Request
+### 5. Commit and Push to Main
 
-- GitHub 저장소 내부 작업을 완료하고 검증한 뒤에는 변경 사항을 항상 커밋하고 원격 브랜치로 push한 다음 pull request를 생성한다.
-- 기본 브랜치에서 직접 작업을 완료하거나 push하지 않는다. `agent/<short-description>` 형식의 작업 브랜치를 만들고, 이미 적절한 작업 브랜치에 있으면 그 브랜치를 계속 사용한다.
+- GitHub 저장소 내부 작업은 기본 브랜치인 `main`에서 수행한다. 별도 작업 브랜치나 pull request를 만들지 않는다.
+- 작업을 시작하기 전에 `main`을 checkout하고 원격을 fetch한 뒤 로컬 `main`이 `origin/main`에서 안전하게 fast-forward 가능한 상태인지 확인한다.
+- 원격 `main`에 새 변경이 있으면 이를 먼저 fast-forward로 반영한다. 로컬과 원격이 diverge한 경우 force push하거나 임의로 이력을 덮어쓰지 말고 충돌 원인을 확인한다.
 - 작업 파일만 명시적으로 stage하고, 사용자나 다른 작업의 관련 없는 변경을 함께 커밋하지 않는다.
-- 커밋 전 관련 테스트와 `git diff --check`를 실행하고, 커밋 후 작업 트리가 의도한 상태인지 확인한다.
-- `git push -u origin <branch>`로 원격 추적 브랜치를 만든다.
-- push가 성공하면 해당 저장소의 기본 브랜치를 대상으로 PR을 항상 생성한다. 사용자가 ready 상태를 명시하지 않으면 draft PR을 기본으로 한다.
-- PR 제목은 전체 변경을 간결하게 요약하고, 본문에는 변경 내용, 변경 이유, 사용자·개발자 영향과 실행한 검증을 기록한다.
-- GitHub CLI 또는 연결된 GitHub 도구로 실제 PR 생성 완료를 확인하고 PR URL과 번호를 결과에 기록한다. PR 생성용 URL만 제공하고 작업을 끝내지 않는다.
-- 인증 실패, push 권한 부족, branch protection 또는 원격 오류로 PR을 만들 수 없으면 임의로 우회하지 말고 정확한 오류와 사용자가 해야 할 조치를 보고한다.
-- submodule과 상위 저장소를 모두 변경했다면 submodule의 commit·push·PR을 먼저 만들고, 그 커밋을 가리키는 상위 저장소의 gitlink와 `.gitmodules` 변경도 별도 commit·push·PR로 게시한다.
+- 커밋 전 관련 테스트와 `git diff --check`를 실행하고 staged diff의 파일 목록과 변경 범위를 확인한다.
+- 검증을 통과하면 변경 사항을 반드시 간결하고 의미 있는 메시지로 commit한다.
+- commit 후 `git push origin main`으로 원격 `main`에 직접 push한다.
+- push가 끝나면 로컬 `HEAD`와 원격 `main`의 commit SHA가 같은지 확인하고 작업 트리가 깨끗한지 검사한다.
+- pull request는 생성하지 않는다. 사용자가 특정 작업에서 명시적으로 PR을 요청한 경우에만 그 요청을 우선한다.
+- 인증 실패, push 권한 부족, branch protection 또는 원격 오류가 발생하면 force push로 우회하지 말고 정확한 오류와 사용자가 해야 할 조치를 보고한다.
+- submodule과 상위 저장소를 모두 변경했다면 submodule 변경을 먼저 해당 저장소의 `main`에 commit·push하고, 그 commit을 가리키는 상위 저장소의 gitlink와 `.gitmodules` 변경도 상위 `main`에 commit·push한다.
 
 ### 6. Submodule Completion Check
 
@@ -131,8 +132,9 @@ git submodule update --init --recursive <repository-name>
 - [ ] 원본 README와 한국어 번역 README에서 가이드로 이동할 수 있는가?
 - [ ] submodule 내부 지침과 검증 명령을 준수했는가?
 - [ ] 최상단 `README.md`의 `TODO`에 submodule 학습 가이드 링크를 추가했는가?
-- [ ] 작업 브랜치에 변경 사항을 커밋하고 원격으로 push했는가?
-- [ ] 기본 브랜치를 대상으로 실제 pull request를 생성하고 URL을 확인했는가?
+- [ ] 변경 사항을 해당 저장소의 `main`에 커밋했는가?
+- [ ] `origin/main`에 직접 push하고 로컬·원격 commit SHA가 일치하는지 확인했는가?
+- [ ] 불필요한 작업 브랜치나 pull request를 생성하지 않았는가?
 
 submodule 내부 변경은 상위 저장소의 gitlink만으로 저장되지 않는다. 작업 결과를 커밋하도록 요청받은 경우 submodule 저장소에서 번역·가이드 변경을 먼저 커밋한 뒤, 상위 저장소에서 갱신된 submodule 포인터와 `.gitmodules`를 커밋한다.
 

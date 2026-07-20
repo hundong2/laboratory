@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [TabFM: 표 데이터용 Zero-shot Foundation Model](tabfm-tabular-foundation-model/README.md) - 2026-07-21
 - [ ] [에이전트형 세계 모델](agentic-world-models/README.md) - 2026-07-20
 - [ ] [Hands-On AI Engineering 한국어 학습 가이드](Hands-On-AI-Engineering/guide/README.md) - 2026-07-20
 - [ ] [Kimi K3: 개방형 3T급 멀티모달 에이전트 모델](kimi-k3/README.md) - 2026-07-20

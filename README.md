@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [NVIDIA Nemotron 3 Nano Omni](nvidia-nemotron-3-nano-omni/README.md) - 2026-07-20
 - [ ] [SEED: Self-Evolving On-Policy Distillation](seed-self-evolving-opd/README.md) - 2026-07-19
 - [ ] [S2Vec: 자기지도 지리공간 임베딩](s2vec-geospatial-embeddings/README.md) - 2026-07-18
 - [ ] [pdf-inspector 오픈소스 정리](Opensource/README.md) - 2026-07-17

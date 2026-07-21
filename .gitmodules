@@ -13,3 +13,6 @@
 [submodule "Unlimited-OCR"]
 	path = Unlimited-OCR
 	url = https://github.com/hundong2/Unlimited-OCR.git
+[submodule "shepherd"]
+	path = shepherd
+	url = https://github.com/hundong2/shepherd.git

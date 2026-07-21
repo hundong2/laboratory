@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [추론 흔적에서 재사용 가능한 모듈로](reasoning-traces-reusable-modules/README.md) - 2026-07-21
 - [ ] [Shepherd 한국어 학습 가이드](shepherd/guide/README.md) - 2026-07-21
 - [ ] [Unlimited-OCR 한국어 학습 가이드](Unlimited-OCR/guide/README.md) - 2026-07-21
 - [ ] [D-FINE-seg: 실시간 객체 검출·분할과 멀티 백엔드 배포](d-fine-seg/README.md) - 2026-07-21

@@ -10,3 +10,6 @@
 [submodule "tabfm"]
 	path = tabfm
 	url = https://github.com/hundong2/tabfm.git
+[submodule "Unlimited-OCR"]
+	path = Unlimited-OCR
+	url = https://github.com/hundong2/Unlimited-OCR.git

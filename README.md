@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Unlimited-OCR 한국어 학습 가이드](Unlimited-OCR/guide/README.md) - 2026-07-21
 - [ ] [D-FINE-seg: 실시간 객체 검출·분할과 멀티 백엔드 배포](d-fine-seg/README.md) - 2026-07-21
 - [ ] [TabFM 한국어 학습 가이드](tabfm/guide/README.md) - 2026-07-21
 - [ ] [TabFM: 표 데이터용 Zero-shot Foundation Model](tabfm-tabular-foundation-model/README.md) - 2026-07-21

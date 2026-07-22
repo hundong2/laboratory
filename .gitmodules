@@ -16,3 +16,6 @@
 [submodule "shepherd"]
 	path = shepherd
 	url = https://github.com/hundong2/shepherd.git
+[submodule "transformer-explainer"]
+	path = transformer-explainer
+	url = https://github.com/hundong2/transformer-explainer.git

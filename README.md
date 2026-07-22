@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [LLM 비용 64% 절감과 캐시 히트율 98% 달성 사례](llm-prompt-caching-cost-optimization/README.md) - 2026-07-22
 - [ ] [추론 흔적에서 재사용 가능한 모듈로](reasoning-traces-reusable-modules/README.md) - 2026-07-21
 - [ ] [Shepherd 한국어 학습 가이드](shepherd/guide/README.md) - 2026-07-21
 - [ ] [Unlimited-OCR 한국어 학습 가이드](Unlimited-OCR/guide/README.md) - 2026-07-21

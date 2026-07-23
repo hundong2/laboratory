@@ -19,3 +19,6 @@
 [submodule "transformer-explainer"]
 	path = transformer-explainer
 	url = https://github.com/hundong2/transformer-explainer.git
+[submodule "TripoSplat"]
+	path = TripoSplat
+	url = https://github.com/hundong2/TripoSplat.git

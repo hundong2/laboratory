@@ -5,6 +5,7 @@
 ## TODO
 
 - [ ] [TripoSplat 한국어 학습 가이드](TripoSplat/guide/README.md) - 2026-07-23
+- [ ] [Thinking to Recall: 추론과 파라메트릭 지식 회상](thinking-to-recall-parametric-knowledge/README.md) - 2026-07-23
 - [ ] [NeuralLog: 로그 파싱 없는 로그 이상 탐지](neurallog-log-anomaly-detection/README.md) - 2026-07-23
 - [ ] [On-Policy Delta Distillation](on-policy-delta-distillation/README.md) - 2026-07-23
 - [ ] [Inkling 오픈 웨이트 모델](inkling-open-weights-model/README.md) - 2026-07-23

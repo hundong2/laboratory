@@ -4,6 +4,12 @@
 
 ## TODO
 
+- [ ] [NeuralLog: 로그 파싱 없는 로그 이상 탐지](neurallog-log-anomaly-detection/README.md) - 2026-07-23
+- [ ] [On-Policy Delta Distillation](on-policy-delta-distillation/README.md) - 2026-07-23
+- [ ] [Inkling 오픈 웨이트 모델](inkling-open-weights-model/README.md) - 2026-07-23
+- [ ] [사전학습에서 포스트 트레이닝까지의 추론 이해](pretraining-post-training-reasoning/README.md) - 2026-07-23
+- [ ] [언어 모델 하네스와 조합적 일반화](language-model-harnesses/README.md) - 2026-07-23
+- [ ] [SEED: Self-Evolving On-Policy Distillation](seed-self-evolving-opd/README.md) - 2026-07-23
 - [ ] [Transformer Explainer 한국어 학습 가이드](transformer-explainer/guide/README.md) - 2026-07-23
 - [ ] [확산 언어 모델: LLaDA에서 DiffusionGemma까지](diffusion-llm-llada-diffusiongemma/README.md) - 2026-07-22
 - [ ] [LLM 비용 64% 절감과 캐시 히트율 98% 달성 사례](llm-prompt-caching-cost-optimization/README.md) - 2026-07-22
@@ -18,7 +24,6 @@
 - [ ] [Kimi K3: 개방형 3T급 멀티모달 에이전트 모델](kimi-k3/README.md) - 2026-07-20
 - [ ] [Orca 한국어 사용 가이드](orca/guide.md) - 2026-07-20
 - [ ] [NVIDIA Nemotron 3 Nano Omni](nvidia-nemotron-3-nano-omni/README.md) - 2026-07-20
-- [ ] [SEED: Self-Evolving On-Policy Distillation](seed-self-evolving-opd/README.md) - 2026-07-19
 - [ ] [S2Vec: 자기지도 지리공간 임베딩](s2vec-geospatial-embeddings/README.md) - 2026-07-18
 - [ ] [pdf-inspector 오픈소스 정리](Opensource/README.md) - 2026-07-17
 - [ ] [2026년 7월 중순 VLM 트렌드 카테고리별 학습 자료](vlm-trending-categories-2026-07/README.md) - 2026-07-17

@@ -1,20 +1,36 @@
 # SEED 논문 및 코드 핵심 번역
 
 작성일: 2026-07-19
+갱신일: 2026-07-23
 
 ## 번역 대상과 범위
 
-- 논문: [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777)
+- 이번 입력 URL: [arXiv:2607.14777](https://arxiv.org/abs/2607.14777)
+- 최종 URL: `https://arxiv.org/abs/2607.14777`
+- 페이지 제목: `SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning`
+- 원문 언어: 영어
+- 접근 일자: 2026-07-23
+- PDF 원문: [arXiv PDF](https://arxiv.org/pdf/2607.14777)
 - 코드: [jinyangwu/SEED](https://github.com/jinyangwu/SEED)
-- Hugging Face Paper: [2607.14777](https://huggingface.co/papers/2607.14777)
+- 보조 페이지: [Hugging Face Paper 2607.14777](https://huggingface.co/papers/2607.14777)
 - 논문 제출일: 2026-07-16
-- 확인 기준일: 2026-07-19
+- 확인 기준일: 2026-07-23
 
-이 파일은 논문과 README의 전문 번역이 아니다. 저작권이 있는 원문을 그대로 복제하지 않고, 학습자가 구조를 이해할 수 있도록 초록, 방법, 실험, 실행 흐름의 핵심을 한국어로 번역 및 해설한다.
+이 파일은 논문과 README의 전문 번역이 아니다. 저작권이 있는 원문을 그대로 복제하지 않고, 학습자가 구조를 이해할 수 있도록 초록, 방법, 실험, 실행 흐름의 핵심을 한국어로 번역 및 해설한다. arXiv abstract 페이지와 PDF는 접근 가능했고, arXiv experimental HTML 링크는 이번 확인 환경에서 열리지 않았다.
 
 ## 제목
 
 SEED: 에이전트형 강화학습을 위한 자기진화 on-policy 증류
+
+## arXiv 페이지 메타데이터 번역
+
+- 분야: Computer Science > Computation and Language
+- 식별자: `arXiv:2607.14777`
+- 버전: `v1`
+- 제출 시각: 2026-07-16 09:57:18 UTC
+- 저자: Jinyang Wu, Shuo Yang, Zhengxi Lu, Fan Zhang, Yuhao Shen, Lang Feng, Haoran Luo, Zheng Lian, Shuai Zhang, Zhengqi Wen, Jianhua Tao
+- DOI: `10.48550/arXiv.2607.14777`
+- 코드 링크: arXiv 페이지에서 GitHub 저장소로 연결됨
 
 ## 초록 번역 요약
 

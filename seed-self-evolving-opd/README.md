@@ -1,20 +1,26 @@
 # SEED: Self-Evolving On-Policy Distillation
 
 작성일: 2026-07-19
+갱신일: 2026-07-23
 
 ## 출처와 작업 범위
 
-- 입력 URL 1: [GitHub - jinyangwu/SEED](https://github.com/jinyangwu/SEED)
-- 입력 URL 2: [Hugging Face Papers - 2607.14777](https://huggingface.co/papers/2607.14777)
-- 논문 원문: [arXiv:2607.14777](https://arxiv.org/abs/2607.14777)
+- 이번 입력 URL: [arXiv:2607.14777](https://arxiv.org/abs/2607.14777)
+- 최종 URL: `https://arxiv.org/abs/2607.14777`
+- arXiv 페이지 제목: `SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning`
+- 원문 언어: 영어
+- 접근 일자: 2026-07-23
+- 이전 참고 URL 1: [GitHub - jinyangwu/SEED](https://github.com/jinyangwu/SEED)
+- 이전 참고 URL 2: [Hugging Face Papers - 2607.14777](https://huggingface.co/papers/2607.14777)
+- PDF 원문: [arXiv PDF](https://arxiv.org/pdf/2607.14777)
 - 논문 제목: `SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning`
 - 제출일: 2026-07-16
-- 확인 기준일: 2026-07-19
+- 확인 기준일: 2026-07-23
 - 코드 공개: GitHub README 기준 2026-07-16 공개
 - 라이선스: GitHub 저장소 기준 MIT License
-- 작업 범위: 논문과 공개 코드 README를 바탕으로 SEED의 문제의식, 두 단계 학습 구조, OPD 손실, GRPO 결합, 실험 결과, 구현 흐름을 한국어 학습 자료와 표준 라이브러리 기반 실습으로 정리한다.
+- 작업 범위: arXiv abstract 페이지와 PDF 본문을 우선 기준으로 SEED의 문제의식, 두 단계 학습 구조, OPD 손실, GRPO 결합, 실험 결과, 구현 흐름을 한국어 학습 자료와 표준 라이브러리 기반 실습으로 정리한다.
 
-원문과 코드 문서는 영어이므로 `translation.ko.md`에 핵심 초록과 구조를 한국어로 번역 및 해설했다. 이 폴더의 노트북은 공식 구현을 재현하지 않고, SEED의 핵심 아이디어를 작은 수치 예제로 학습하기 위한 축소 구현이다.
+원문과 코드 문서는 영어이므로 [translation.ko.md](translation.ko.md)에 핵심 초록과 구조를 한국어로 번역 및 해설했다. arXiv experimental HTML 링크는 이번 확인 환경에서 열리지 않았고, abstract 페이지와 PDF는 접근 가능했다. 이 폴더의 노트북은 공식 구현을 재현하지 않고, SEED의 핵심 아이디어를 작은 수치 예제로 학습하기 위한 축소 구현이다.
 
 ## 한눈에 보기
 
@@ -64,6 +70,8 @@ skill을 추가했을 때 어떤 token의 log-probability가 올라가면, 그 t
 ## 핵심 요약
 
 - SEED는 `SElf-Evolving On-Policy Distillation`의 약자다.
+- arXiv v1은 2026-07-16 09:57:18 UTC에 제출되었고, 분야는 `cs.CL`이다.
+- 저자는 Jinyang Wu, Shuo Yang, Zhengxi Lu, Fan Zhang, Yuhao Shen, Lang Feng, Haoran Luo, Zheng Lian, Shuai Zhang, Zhengqi Wen, Jianhua Tao다.
 - 문제는 episode-level sparse reward와 token-level policy learning 사이의 supervision gap이다.
 - Stage 1은 외부 analyzer로 trajectory-skill SFT 데이터를 만들고 policy가 trajectory를 분석할 수 있게 한다.
 - Stage 2는 현재 policy snapshot이 actor와 analyzer 역할을 동시에 수행한다.

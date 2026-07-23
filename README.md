@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Qwen-Image-3.0: 복잡한 시각 콘텐츠 생성과 평가](qwen-image-3-0/README.md) - 2026-07-24
 - [ ] [TripoSplat 한국어 학습 가이드](TripoSplat/guide/README.md) - 2026-07-23
 - [ ] [Thinking to Recall: 추론과 파라메트릭 지식 회상](thinking-to-recall-parametric-knowledge/README.md) - 2026-07-23
 - [ ] [NeuralLog: 로그 파싱 없는 로그 이상 탐지](neurallog-log-anomaly-detection/README.md) - 2026-07-23

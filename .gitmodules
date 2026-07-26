@@ -22,3 +22,6 @@
 [submodule "TripoSplat"]
 	path = TripoSplat
 	url = https://github.com/hundong2/TripoSplat.git
+[submodule "polka"]
+	path = polka
+	url = https://github.com/hundong2/polka.git

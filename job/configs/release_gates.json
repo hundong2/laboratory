@@ -1,0 +1,44 @@
+{
+  "policy": {
+    "version": "robotics-ai-release-policy-1",
+    "owner": "replace-with-subsystem-owner",
+    "safety_reviewer": "replace-with-independent-reviewer",
+    "reviewed_on": "2026-07-26",
+    "note": "예제 수치다. 실제 hazard, ODD, control period와 target budget에서 다시 도출해야 한다."
+  },
+  "minimum": {
+    "quality.test_accuracy": 0.95,
+    "quality.stop_recall": 0.98,
+    "runtime.soak_minutes": 30
+  },
+  "maximum": {
+    "runtime.p99_ms": 20.0,
+    "runtime.deadline_miss_rate": 0.001,
+    "runtime.peak_memory_mb": 256,
+    "runtime.maximum_temperature_c": 85.0
+  },
+  "max_drop_from_baseline": {
+    "quality.test_accuracy": 0.01,
+    "quality.stop_recall": 0.005
+  },
+  "max_increase_from_baseline": {
+    "runtime.p99_ms": 2.0,
+    "runtime.peak_memory_mb": 16
+  },
+  "required_true": [
+    "evidence.checksums_verified",
+    "evidence.golden_vectors_passed",
+    "evidence.fault_injection_passed",
+    "evidence.rollback_tested",
+    "evidence.sbom_present"
+  ],
+  "required_nonempty": [
+    "identity.model_version",
+    "identity.model_sha256",
+    "identity.code_commit",
+    "identity.dataset_version",
+    "environment.target_hardware",
+    "environment.os",
+    "environment.runtime"
+  ]
+}

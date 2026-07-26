@@ -1,0 +1,14 @@
+# 수치 배열과 첫 실습을 실행한다.
+numpy>=2.0,<3
+# 작은 신경망을 사전학습하고 파인튜닝한다.
+torch>=2.6,<3
+# 실제 이미지 데이터에서 MobileNetV3-Small과 ImageFolder를 사용한다.
+torchvision>=0.21,<1
+# PyTorch 모델을 ONNX 파일로 내보내고 검사한다.
+onnx>=1.17,<2
+# Python에서 ONNX 모델을 실행하고 INT8로 양자화한다.
+onnxruntime>=1.20,<2
+# 세 개의 실습 노트북을 실행한다.
+jupyterlab>=4.3,<5
+# 노트북 구조 검사 스크립트에서 선택적으로 사용한다.
+nbformat>=5.10,<6

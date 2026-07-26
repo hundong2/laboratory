@@ -1,0 +1,14 @@
+# 노트북이 생성하는 모델 산출물을 제외한다.
+artifacts/*
+# 빈 산출물 폴더 자체는 유지한다.
+!artifacts/.gitkeep
+# 벤치마크 결과는 장치마다 달라지므로 제외한다.
+reports/*
+# 빈 보고서 폴더 자체는 유지한다.
+!reports/.gitkeep
+# Python bytecode cache를 제외한다.
+__pycache__/
+# 로컬 가상환경을 제외한다.
+.venv/
+# Jupyter 임시 checkpoint를 제외한다.
+.ipynb_checkpoints/

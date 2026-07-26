@@ -1,0 +1,31 @@
+{
+  "identity": {
+    "model_version": "sensor-model-1",
+    "model_sha256": "baseline-example-sha256",
+    "code_commit": "baseline-example-commit",
+    "dataset_version": "sensor-dataset-1"
+  },
+  "environment": {
+    "target_hardware": "example-arm64-target",
+    "os": "Ubuntu 24.04",
+    "runtime": "ONNX Runtime CPU"
+  },
+  "quality": {
+    "test_accuracy": 0.97,
+    "stop_recall": 0.99
+  },
+  "runtime": {
+    "p99_ms": 15.0,
+    "deadline_miss_rate": 0.0005,
+    "peak_memory_mb": 180,
+    "maximum_temperature_c": 70.0,
+    "soak_minutes": 60
+  },
+  "evidence": {
+    "checksums_verified": true,
+    "golden_vectors_passed": true,
+    "fault_injection_passed": true,
+    "rollback_tested": true,
+    "sbom_present": true
+  }
+}

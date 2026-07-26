@@ -6,6 +6,7 @@
 
 - [ ] [Graphify 한국어 학습 가이드](graphify/guide/README.md) - 2026-07-26
 - [ ] [POLKA 한국어 학습 가이드](polka/guide/README.md) - 2026-07-26
+- [ ] [Python 실험에서 C++ 임베디드 AI 배포까지](job/README.md) - 2026-07-25
 - [ ] [서버 이상징후 탐지를 위한 오픈 경량 모델](lightweight-server-anomaly-detection/README.md) - 2026-07-24
 - [ ] [Qwen-Image-3.0: 복잡한 시각 콘텐츠 생성과 평가](qwen-image-3-0/README.md) - 2026-07-24
 - [ ] [TripoSplat 한국어 학습 가이드](TripoSplat/guide/README.md) - 2026-07-23

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- package format 3은 현재 ROS 2 ament 패키지의 manifest 형식이다. -->
+<package format="3">
+  <!-- name은 colcon과 ros2 run에서 사용하는 고유 패키지 이름이다. -->
+  <name>edge_ai_demo</name>
+  <!-- version은 예제 패키지의 semantic version 시작값이다. -->
+  <version>0.1.0</version>
+  <!-- description은 패키지 색인과 도구가 보여 줄 한 줄 목적이다. -->
+  <description>Minimal ROS 2 wrapper for the sensor ONNX model.</description>
+  <!-- maintainer는 실제 프로젝트에서 담당 팀 주소로 교체해야 한다. -->
+  <maintainer email="student@example.com">student</maintainer>
+  <!-- Apache-2.0은 이 예제 코드에 선택한 공개 라이선스 식별자다. -->
+  <license>Apache-2.0</license>
+  <!-- ament_cmake는 CMake 기반 ROS 2 패키지 빌드 도구다. -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <!-- rclcpp는 ROS 2 C++ node, publisher, subscription API를 제공한다. -->
+  <depend>rclcpp</depend>
+  <!-- std_msgs는 Float32MultiArray와 Int32 기본 메시지를 제공한다. -->
+  <depend>std_msgs</depend>
+  <!-- lint 의존성은 BUILD_TESTING일 때 ROS 코딩 규칙 검사를 제공한다. -->
+  <test_depend>ament_lint_auto</test_depend>
+  <!-- 공통 lint 규칙 묶음을 test 의존성으로 사용한다. -->
+  <test_depend>ament_lint_common</test_depend>
+  <!-- export는 이 패키지의 build type을 다른 ROS 도구에 알려 준다. -->
+  <export>
+    <!-- ament_cmake를 build type으로 선언한다. -->
+    <build_type>ament_cmake</build_type>
+  <!-- export 블록을 닫는다. -->
+  </export>
+<!-- package manifest를 닫는다. -->
+</package>

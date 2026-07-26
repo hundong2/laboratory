@@ -4,6 +4,8 @@
 
 ## TODO
 
+- [ ] [YOLO v1 문장 대조 번역과 객체 탐지 실습](you-only-look-once-v1/README.md) - 2026-07-26
+- [ ] [Attention Is All You Need 문장 대조 번역과 실습](attention-is-all-you-need/README.md) - 2026-07-26
 - [ ] [Detectron2 한국어 학습 가이드](detectron2/guide/README.md) - 2026-07-26
 - [ ] [Graphify 한국어 학습 가이드](graphify/guide/README.md) - 2026-07-26
 - [ ] [POLKA 한국어 학습 가이드](polka/guide/README.md) - 2026-07-26

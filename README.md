@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Detectron2 한국어 학습 가이드](detectron2/guide/README.md) - 2026-07-26
 - [ ] [Graphify 한국어 학습 가이드](graphify/guide/README.md) - 2026-07-26
 - [ ] [POLKA 한국어 학습 가이드](polka/guide/README.md) - 2026-07-26
 - [ ] [Python 실험에서 C++ 임베디드 AI 배포까지](job/README.md) - 2026-07-25

@@ -28,3 +28,6 @@
 [submodule "graphify"]
 	path = graphify
 	url = https://github.com/hundong2/graphify.git
+[submodule "detectron2"]
+	path = detectron2
+	url = https://github.com/hundong2/detectron2.git

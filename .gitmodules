@@ -25,3 +25,6 @@
 [submodule "polka"]
 	path = polka
 	url = https://github.com/hundong2/polka.git
+[submodule "graphify"]
+	path = graphify
+	url = https://github.com/hundong2/graphify.git

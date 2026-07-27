@@ -4,15 +4,15 @@
 
 ## TODO
 
+- [ ] [Detectron2 한국어 학습 가이드](https://github.com/hundong2/detectron2/blob/80eb04a05de32c9f8b2c852428e43f12ba550867/guide/README.md) - 2026-07-26
 - [ ] [YOLO v1 문장 대조 번역과 객체 탐지 실습](you-only-look-once-v1/README.md) - 2026-07-26
 - [ ] [Attention Is All You Need 문장 대조 번역과 실습](attention-is-all-you-need/README.md) - 2026-07-26
-- [ ] [Detectron2 한국어 학습 가이드](detectron2/guide/README.md) - 2026-07-26
-- [ ] [Graphify 한국어 학습 가이드](graphify/guide/README.md) - 2026-07-26
-- [ ] [POLKA 한국어 학습 가이드](polka/guide/README.md) - 2026-07-26
+- [ ] [Graphify 한국어 학습 가이드](https://github.com/hundong2/graphify/blob/33f7fe148869dd21a9d6b88bdd05738d7deef690/guide/README.md) - 2026-07-26
+- [ ] [POLKA 한국어 학습 가이드](https://github.com/hundong2/polka/blob/73c99d9db0150ef9ac2d33e418e514d46586575b/guide/README.md) - 2026-07-26
 - [ ] [Python 실험에서 C++ 임베디드 AI 배포까지](job/README.md) - 2026-07-25
 - [ ] [서버 이상징후 탐지를 위한 오픈 경량 모델](lightweight-server-anomaly-detection/README.md) - 2026-07-24
 - [ ] [Qwen-Image-3.0: 복잡한 시각 콘텐츠 생성과 평가](qwen-image-3-0/README.md) - 2026-07-24
-- [ ] [TripoSplat 한국어 학습 가이드](TripoSplat/guide/README.md) - 2026-07-23
+- [ ] [TripoSplat 한국어 학습 가이드](https://github.com/hundong2/TripoSplat/blob/4c0794a84c41a78104342041374fd9ecc2971591/guide/README.md) - 2026-07-23
 - [ ] [Thinking to Recall: 추론과 파라메트릭 지식 회상](thinking-to-recall-parametric-knowledge/README.md) - 2026-07-23
 - [ ] [NeuralLog: 로그 파싱 없는 로그 이상 탐지](neurallog-log-anomaly-detection/README.md) - 2026-07-23
 - [ ] [On-Policy Delta Distillation](on-policy-delta-distillation/README.md) - 2026-07-23
@@ -20,19 +20,19 @@
 - [ ] [사전학습에서 포스트 트레이닝까지의 추론 이해](pretraining-post-training-reasoning/README.md) - 2026-07-23
 - [ ] [언어 모델 하네스와 조합적 일반화](language-model-harnesses/README.md) - 2026-07-23
 - [ ] [SEED: Self-Evolving On-Policy Distillation](seed-self-evolving-opd/README.md) - 2026-07-23
-- [ ] [Transformer Explainer 한국어 학습 가이드](transformer-explainer/guide/README.md) - 2026-07-23
+- [ ] [Transformer Explainer 한국어 학습 가이드](https://github.com/hundong2/transformer-explainer/blob/ab3af94960c965f376e49d1d34d8abf495b69325/guide/README.md) - 2026-07-23
 - [ ] [확산 언어 모델: LLaDA에서 DiffusionGemma까지](diffusion-llm-llada-diffusiongemma/README.md) - 2026-07-22
 - [ ] [LLM 비용 64% 절감과 캐시 히트율 98% 달성 사례](llm-prompt-caching-cost-optimization/README.md) - 2026-07-22
 - [ ] [추론 흔적에서 재사용 가능한 모듈로](reasoning-traces-reusable-modules/README.md) - 2026-07-21
-- [ ] [Shepherd 한국어 학습 가이드](shepherd/guide/README.md) - 2026-07-21
-- [ ] [Unlimited-OCR 한국어 학습 가이드](Unlimited-OCR/guide/README.md) - 2026-07-21
+- [ ] [Shepherd 한국어 학습 가이드](https://github.com/hundong2/shepherd/blob/db47ea67b66c9e0e443bb857813c640f0575b278/guide/README.md) - 2026-07-21
+- [ ] [Unlimited-OCR 한국어 학습 가이드](https://github.com/hundong2/Unlimited-OCR/blob/a8df377a0250f1cdccdc62dca3f8b5cb0d6ab238/guide/README.md) - 2026-07-21
 - [ ] [D-FINE-seg: 실시간 객체 검출·분할과 멀티 백엔드 배포](d-fine-seg/README.md) - 2026-07-21
-- [ ] [TabFM 한국어 학습 가이드](tabfm/guide/README.md) - 2026-07-21
+- [ ] [TabFM 한국어 학습 가이드](https://github.com/hundong2/tabfm/blob/899512482dc490f1f035f83e8fb36e95642397f6/guide/README.md) - 2026-07-21
 - [ ] [TabFM: 표 데이터용 Zero-shot Foundation Model](tabfm-tabular-foundation-model/README.md) - 2026-07-21
 - [ ] [에이전트형 세계 모델](agentic-world-models/README.md) - 2026-07-20
-- [ ] [Hands-On AI Engineering 한국어 학습 가이드](Hands-On-AI-Engineering/guide/README.md) - 2026-07-20
+- [ ] [Hands-On AI Engineering 한국어 학습 가이드](https://github.com/hundong2/Hands-On-AI-Engineering/blob/41433fcc3277de2846ae56eebf4696b265015bdb/guide/README.md) - 2026-07-20
 - [ ] [Kimi K3: 개방형 3T급 멀티모달 에이전트 모델](kimi-k3/README.md) - 2026-07-20
-- [ ] [Orca 한국어 사용 가이드](orca/guide.md) - 2026-07-20
+- [ ] [Orca 한국어 사용 가이드](https://github.com/hundong2/orca/blob/a9e645b5b2e10874a2b8274deb7d641eda66421f/guide.md) - 2026-07-20
 - [ ] [NVIDIA Nemotron 3 Nano Omni](nvidia-nemotron-3-nano-omni/README.md) - 2026-07-20
 - [ ] [S2Vec: 자기지도 지리공간 임베딩](s2vec-geospatial-embeddings/README.md) - 2026-07-18
 - [ ] [pdf-inspector 오픈소스 정리](Opensource/README.md) - 2026-07-17

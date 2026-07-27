@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [GOT-OCR2.0 한국어 학습 가이드](GOT-OCR2.0/guide/README.md) - 2026-07-27
 - [ ] [Detectron2 한국어 학습 가이드](https://github.com/hundong2/detectron2/blob/80eb04a05de32c9f8b2c852428e43f12ba550867/guide/README.md) - 2026-07-26
 - [ ] [YOLO v1 문장 대조 번역과 객체 탐지 실습](you-only-look-once-v1/README.md) - 2026-07-26
 - [ ] [Attention Is All You Need 문장 대조 번역과 실습](attention-is-all-you-need/README.md) - 2026-07-26

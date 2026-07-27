@@ -31,3 +31,6 @@
 [submodule "detectron2"]
 	path = detectron2
 	url = https://github.com/hundong2/detectron2.git
+[submodule "GOT-OCR2.0"]
+	path = GOT-OCR2.0
+	url = https://github.com/hundong2/GOT-OCR2.0.git

@@ -30,15 +30,37 @@ topic-folder/
   01_foundations.ipynb     # 기본 학습 실습
   02_practice.ipynb        # 응용 실습
   03_advanced.ipynb        # 심화 실습
+  guide/                   # 다중 URL 묶음 또는 실습 중심 요청의 단계별 가이드와 코드
+    README.md
+    01_foundations.ipynb
+    02_practice.ipynb
+    03_advanced.ipynb
 ```
 
-위 트리는 입력 유형에 따라 달라진다. 논문 URL, 논문 PDF 또는 논문 원문이 입력이면 아래 `Paper Translation Workflow`가 일반 `Website URL Workflow`와 `Translation Gate`보다 우선한다. 이 경우 `<논문 제목>.번역.md`가 필수 번역 산출물이며 같은 내용을 `translation.ko.md`로 중복 생성하지 않는다.
+위 트리는 입력 유형에 따라 달라진다. 사용자가 한 요청에 여러 URL을 주고 그 안에 GitHub 저장소와 일반 웹사이트·논문·블로그·문서 URL이 섞여 있으면 `Mixed URL Bundle Workflow`가 `GitHub Repository Workflow`보다 우선한다. 논문 URL, 논문 PDF 또는 논문 원문이 입력이면 아래 `Paper Translation Workflow`가 일반 `Website URL Workflow`와 `Translation Gate`보다 우선한다. 이 경우 `<논문 제목>.번역.md`가 필수 번역 산출물이며 같은 내용을 `translation.ko.md`로 중복 생성하지 않는다.
 
 문서 주제가 C++ 또는 C# 중심이면 실습 파일은 `*.cpp` 또는 `*.csx`를 사용한다. Python이 자연스러운 주제는 `*.ipynb`를 기본으로 한다.
+
+## Mixed URL Bundle Workflow
+
+사용자가 한 번의 요청에 GitHub 저장소 주소와 일반 웹사이트, 논문, 블로그, 공식 문서 URL을 함께 제공하면 이 절을 우선 적용한다. 이 경우 GitHub 저장소는 분석 대상 출처이지 편집 대상 저장소가 아니다.
+
+- 하나의 공통 주제 폴더를 만들고 모든 출처를 `README.md`의 `출처와 작업 범위`에 URL별로 기록한다.
+- GitHub 저장소는 submodule, clone, subtree로 추가하지 않는다. 원격 페이지, README, 문서, 공개 코드 파일을 직접 확인해 일반 사이트처럼 분석한다.
+- GitHub 저장소를 확인할 때는 저장소명, 기본 브랜치, 확인 가능한 최신 commit 또는 release, license, 주요 언어, 핵심 디렉터리와 실행 진입점을 기록한다.
+- 저장소 코드에 대해서는 `README.md` 또는 `guide/README.md`에 한국어 코드 리뷰를 추가한다. 리뷰는 아키텍처, 주요 모듈, 실행 흐름, 의존성, 확장 지점, 테스트·디버깅 포인트, 주의할 위험을 포함한다.
+- 저장소 README나 문서가 외국어이면 `translation.ko.md`에 사이트 번역 작업으로 포함한다. 여러 출처가 있으면 URL별 section을 나누고 원문 구조와 링크를 보존한다.
+- 함께 제공된 논문 URL이 실제 논문이면 같은 주제 폴더 안에 `Paper Translation Workflow`를 적용해 `<논문 제목>.번역.md`를 만든다. 논문 번역 내용을 `translation.ko.md`에 중복하지 않는다.
+- 실습 자료는 주제 폴더의 `guide/` 안에 둔다. `guide/README.md`를 시작점으로 만들고 단계별 학습 코드는 `guide/01_foundations.*`, `guide/02_practice.*`, `guide/03_advanced.*`처럼 번호를 붙인다.
+- 실습 코드는 원격 저장소를 로컬 submodule로 가져왔다는 전제 없이 동작해야 한다. 필요한 경우 작은 toy implementation, API 사용 예제, 설정 템플릿, 의사 코드, 공개 raw 파일 다운로드 예제를 사용한다.
+- `README.md`에는 목차를 두고, 번역 파일, 논문 번역 파일, `guide/README.md`, 핵심 실습 파일로 이동하는 링크를 포함한다.
+- 루트 `README.md`의 `TODO`에는 submodule 경로가 아니라 생성한 주제 폴더의 `README.md` 링크를 추가한다.
 
 ## Website URL Workflow
 
 사용자가 GitHub 저장소가 아닌 일반 웹사이트 주소를 입력으로 제공하면 사이트 내용 확인과 한국어 번역을 필수 작업으로 처리한다.
+
+한 요청에 GitHub 저장소와 일반 웹사이트·논문 URL이 함께 있으면 이 절만 단독 적용하지 말고 `Mixed URL Bundle Workflow`를 우선 적용한다.
 
 논문 사이트, DOI와 논문 PDF는 이 절의 일반 규칙 대신 아래 `Paper Translation Workflow`를 우선 적용한다.
 
@@ -160,7 +182,9 @@ paper-topic/
 
 ## GitHub Repository Workflow
 
-사용자가 GitHub 저장소 주소를 입력으로 제공하면 일반 웹 문서 처리 대신 다음 절차를 우선 적용한다.
+사용자가 단일 GitHub 저장소 주소를 주요 입력으로 제공하면 일반 웹 문서 처리 대신 다음 절차를 우선 적용한다.
+
+예외: 한 요청에 GitHub 저장소와 일반 웹사이트·논문·블로그·문서 URL이 함께 제공되었거나, 사용자가 clone/submodule 없이 분석하라고 명시하면 이 절을 적용하지 않는다. 이 경우 `Mixed URL Bundle Workflow`에 따라 GitHub 저장소를 일반 사이트처럼 분석하고, 결과물은 상위 작업 주제 폴더 안에 만든다.
 
 ### 1. Submodule Registration
 
@@ -253,6 +277,7 @@ submodule 내부 변경은 상위 저장소의 gitlink만으로 저장되지 않
 
 - 입력의 주제, 원문 언어, 난이도, 주요 기술 키워드를 파악한다.
 - 링크를 받은 경우 원문 URL, 제목, 접근 또는 확인 일자를 기록한다.
+- 한 요청에 여러 URL이 있고 GitHub 저장소와 일반 웹사이트·논문 URL이 섞였는지 먼저 확인한다. 섞여 있으면 `Mixed URL Bundle Workflow`를 작업 계획에 명시한다.
 - 논문 URL, DOI, PDF 또는 논문 본문인지 먼저 판별한다. 논문이면 `Paper Translation Workflow`를 작업 계획에 명시한다.
 - 논문이면 원문 전체, abstract만, supplementary 포함 여부 중 실제 확인 가능한 범위를 기록하고 번역 범위를 과장하지 않는다.
 - 원문이 한국어가 아니면 번역 산출물 생성을 필수 작업으로 표시한다.
@@ -266,14 +291,25 @@ submodule 내부 변경은 상위 저장소의 gitlink만으로 저장되지 않
 
 ### 3. Topic README
 
-새 폴더의 `README.md`는 반드시 한국어로 작성하고, 파일 상단에 작성 일자를 표시한다.
+새 폴더의 `README.md`는 반드시 한국어로 작성하고, 파일 상단에 작성 일자와 목차를 표시한다.
 
-권장 구조:
+기본 구조:
 
 ```md
 # <주제명>
 
 작성일: YYYY-MM-DD
+
+## 목차
+
+- [출처와 작업 범위](#출처와-작업-범위)
+- [한눈에 보기](#한눈에-보기)
+- [기초 개념](#기초-개념)
+- [핵심 요약](#핵심-요약)
+- [상세 정리](#상세-정리)
+- [용어 정리](#용어-정리)
+- [실습 학습 가이드](#실습-학습-가이드)
+- [다음 학습 경로](#다음-학습-경로)
 
 ## 출처와 작업 범위
 
@@ -292,7 +328,7 @@ submodule 내부 변경은 상위 저장소의 gitlink만으로 저장되지 않
 ## 다음 학습 경로
 ```
 
-`실습 학습 가이드`에는 별도 실습 파일의 목차와 목적을 설명한다. 긴 코드를 `README.md` 안에 몰아넣지 않는다.
+`실습 학습 가이드`에는 별도 실습 파일의 목차와 목적을 설명한다. 다중 URL 묶음 작업에서는 `guide/README.md`와 `guide/01_foundations.*` 같은 단계별 실습 파일 링크를 포함한다. 긴 코드를 `README.md` 안에 몰아넣지 않는다.
 
 ### 4. Translation Gate
 
@@ -312,13 +348,26 @@ submodule 내부 변경은 상위 저장소의 gitlink만으로 저장되지 않
 
 학습 파일은 번호 라벨을 붙여 순서를 고정한다.
 
-예시:
+단일 웹사이트나 논문 중심 작업은 주제 폴더 루트에 둘 수 있다. 다중 URL 묶음, GitHub 코드 분석이 포함된 작업, 사용자가 실습 중심 구성을 요구한 작업은 주제 폴더 안의 `guide/` 폴더에 둔다.
+
+루트 배치 예시:
 
 ```text
 01_foundations.ipynb
 02_core_concepts.ipynb
 03_build_something.ipynb
 04_advanced_patterns.ipynb
+```
+
+`guide/` 배치 예시:
+
+```text
+guide/
+  README.md
+  01_foundations.ipynb
+  02_practice.ipynb
+  03_advanced.ipynb
+  examples/
 ```
 
 코드 작성 규칙:
@@ -329,6 +378,7 @@ submodule 내부 변경은 상위 저장소의 gitlink만으로 저장되지 않
 - 코드 주석에는 문법 설명과 "왜 이렇게 작성했는지"를 함께 적는다.
 - 단순 예제에서 끝내지 말고, 기초 예제에서 응용 예제로 이어지게 구성한다.
 - 외부 패키지가 필요하면 설치 방법과 최소 실행 예제를 적는다.
+- GitHub 저장소를 submodule로 두지 않는 다중 URL 작업에서는 실습 코드가 외부 저장소의 로컬 경로에 의존하지 않도록 작성한다.
 
 ### 6. Root README Index Update
 
@@ -348,7 +398,10 @@ submodule 내부 변경은 상위 저장소의 gitlink만으로 저장되지 않
 
 - [ ] 요청 하나가 하나의 주제 폴더로 정리되었는가?
 - [ ] 새 폴더 `README.md` 상단에 작성일이 있는가?
+- [ ] 새 폴더 `README.md`에 목차가 있고 주요 산출물 링크가 포함되었는가?
 - [ ] 분석, 요약, 기초 개념, 상세 정리, 용어, 학습 경로가 포함되었는가?
+- [ ] 여러 URL에 GitHub 저장소와 일반 사이트·논문이 섞인 경우 submodule/clone 없이 일반 사이트처럼 분석했는가?
+- [ ] GitHub 코드 분석이 포함된 경우 코드 리뷰, 사용 방법, 실행 흐름, 주의점이 작업 주제 폴더 안에 정리되었는가?
 - [ ] 논문이 아닌 외국어 원문이면 `translation.ko.md`가 있는가?
 - [ ] 논문이 아닌 일반 웹사이트 URL이면 원문 언어와 관계없이 `translation.ko.md`가 있는가?
 - [ ] 논문 입력이면 일반 번역 파일 대신 `<논문 제목>.번역.md`가 생성되었는가?
@@ -359,6 +412,7 @@ submodule 내부 변경은 상위 저장소의 gitlink만으로 저장되지 않
 - [ ] 수식·인용·수치·단위·표·그림 caption과 가능성·부정 표현이 왜곡되지 않았는가?
 - [ ] 접근 제한, OCR 불확실성, 저작권·license와 번역 범위가 정직하게 표시되었는가?
 - [ ] 번호가 붙은 실습 파일이 있는가?
+- [ ] 다중 URL 묶음 또는 실습 중심 작업의 단계별 학습 코드를 `guide/` 폴더에 배치했는가?
 - [ ] 실습 파일에 기초 문법과 작성 이유를 설명하는 주석이 충분한가?
 - [ ] 최상단 `README.md`의 `TODO`에 새 `README.md` 링크가 추가되었는가?
 - [ ] 출처와 확인 기준일이 기록되었는가?

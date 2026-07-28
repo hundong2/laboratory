@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [DeepEval 한국어 학습 가이드](deepeval/guide/README.md) - 2026-07-28
 - [ ] [.NET Agent Skills 정식 출시와 운영 실습](dotnet-agent-skills-release/README.md) - 2026-07-27
 - [ ] [FlashSAC 문장 대조 번역과 오프폴리시 강화학습 실습](flashsac-off-policy-robot-control/README.md) - 2026-07-27
 - [ ] [GOT-OCR2.0 한국어 학습 가이드](GOT-OCR2.0/guide/README.md) - 2026-07-27

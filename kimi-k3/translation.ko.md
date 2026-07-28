@@ -1,17 +1,163 @@
 # Kimi K3 원문 한국어 번역 요약
 
 작성일: 2026-07-20
+갱신일: 2026-07-28
 
-원문: [Kimi K3: Open Frontier Intelligence](https://www.kimi.com/blog/kimi-k3)
-확인일: 2026-07-20
+원문:
 
-> 저작권을 존중하기 위해 원문 전체를 직역하지 않고, 제목 흐름과 핵심 주장·수치·주의사항을 보존한 번역 요약을 제공한다.
+- [Kimi K3: Open Frontier Intelligence](https://www.kimi.com/blog/kimi-k3)
+- [moonshotai/Kimi-K3 Hugging Face 모델 카드](https://huggingface.co/moonshotai/Kimi-K3)
+- [Kimi K3 License](https://huggingface.co/moonshotai/Kimi-K3/blob/main/LICENSE)
+
+사용자 입력: [Google 공유 링크](https://share.google/RzthWmSD3pWMlObKI)
+
+확인일: 2026-07-20, 재확인 2026-07-28
+
+원문 언어: 영어
+
+> 저작권을 존중하기 위해 원문 전체를 복제하지 않고, 각 원문의 제목
+> 흐름과 핵심 주장·수치·주의사항을 보존한 한국어 번역 요약을 제공한다.
+> 라이선스 설명은 법률 자문이 아니며 반드시 원문을 확인해야 한다.
+
+## Hugging Face 모델 카드 한국어 번역 요약
+
+### 1. 모델 소개
+
+Kimi K3는 공개 가중치를 제공하는 네이티브 멀티모달 에이전트 모델이며
+Moonshot AI가 현재까지 공개한 모델 중 가장 강력한 모델로 소개된다.
+Kimi Delta Attention(KDA)과 Attention Residuals(AttnRes)를 기반으로 한
+2.8조 파라미터 모델이고, 네이티브 비전과 100만 토큰 문맥 창을 갖는다.
+장시간 코딩, 지식 작업과 추론에서 frontier 수준의 지능을 목표로 한다.
+
+주요 특징:
+
+- **새 아키텍처**: KDA, AttnRes, Stable LatentMoE를 결합한다. 896개
+  전문가 중 16개를 활성화하며 K2 대비 전체 scaling efficiency가 약
+  2.5배 개선됐다고 제작사는 설명한다.
+- **장시간 코딩**: 사람의 개입을 줄인 긴 엔지니어링 세션, 대규모
+  저장소 탐색, terminal tool orchestration을 목표로 한다.
+- **에이전트형 지식 작업**: 심층 조사, interactive visualization,
+  widget·dashboard, motion design과 video editing을 수행한다.
+- **네이티브 멀티모달과 긴 문맥**: 텍스트·이미지를 같은 모델에서
+  이해하고 1,048,576 token context를 지원한다.
+- **전체 가중치 공개**: Kimi K3 License 아래 연구·배포·후속 개발용
+  전체 가중치를 공개한다.
+
+### 2. 모델 요약
+
+| 항목 | 모델 카드 값 |
+| --- | --- |
+| 아키텍처 | Mixture-of-Experts |
+| 전체/활성 파라미터 | 2.8T / 104B |
+| 계층 | 93개, 이 중 dense layer 1개 |
+| attention 구성 | 69 KDA + 24 Gated MLA |
+| attention hidden dimension/head | 7168 / 96 |
+| latent MoE dimension | 3584 |
+| 전문가 | 896개 중 token당 16개 선택, shared expert 2개 |
+| vocabulary | 160K |
+| 최대 문맥 | 1,048,576 token |
+| 비전 인코더 | MoonViT-V2, 401M parameters |
+| 양자화 | MXFP4 weights / MXFP8 activations |
+| modality | Text, Image |
+
+Hugging Face 저장소는 2026-07-28 확인 시 약 1.56TB이며 96개
+safetensors shard와 모델·processor custom code를 제공한다.
+
+### 3. 평가 결과
+
+모델 카드는 reasoning·knowledge, coding, agentic, vision benchmark를
+비교한다. 대표적으로 Kimi K3(max)는 GPQA Diamond 93.5,
+Terminal-Bench 2.1 88.3, BrowseComp 91.2, MCPMark-Verified 94.5,
+OmniDocBench 91.1을 보고한다. 이 수치는 제작사 모델 카드의 보고값이며
+성능 보증이나 동일 조건 독립 재현 결과가 아니다.
+
+모든 K3 결과는 `reasoning_effort=max`, temperature 1.0을 사용한다.
+GPQA·HLE와 도구 없는 vision benchmark는 top-p 0.95, agentic task는
+top-p 1.0이다. benchmark에 따라 Kimi Code, Codex, Claude Code 등
+harness가 다르고 일부 표는 tool augmentation 전후 점수를 함께 쓴다.
+따라서 단순 순위보다 각주, harness, tool budget, 반복 횟수를 함께
+읽어야 한다.
+
+### 4. 네이티브 MXFP4 양자화
+
+K3는 SFT 단계부터 quantization-aware training을 적용한다. 가중치에는
+MXFP4, 활성값에는 MXFP8을 사용해 여러 하드웨어에서 낮은 정밀도로
+추론할 수 있도록 설계했다.
+
+### 5. 배포
+
+Moonshot 공식 API에서는 `platform.kimi.ai`에서 `kimi-k3`를 선택할 수
+있고 OpenAI/Anthropic 호환 API를 제공한다. 자체 호스팅용 권장 추론
+엔진은 vLLM, SGLang, TokenSpeed다.
+
+Hugging Face가 제시하는 최소 형태:
+
+```bash
+pip install vllm
+vllm serve "moonshotai/Kimi-K3"
+```
+
+```bash
+pip install sglang
+python -m sglang.launch_server \
+  --model-path "moonshotai/Kimi-K3" \
+  --host 0.0.0.0 \
+  --port 30000
+```
+
+이 명령이 consumer GPU 한 대에서 실행 가능하다는 뜻은 아니다. 저장소가
+약 1.56TB이고 제작사는 64개 이상 가속기의 supernode를 권장한다.
+`trust_remote_code=True`로 Transformers custom code를 실행할 때는
+revision을 SHA로 고정하고 내려받은 코드를 먼저 검토해야 한다.
+
+### 6. 모델 사용
+
+K3는 thinking이 항상 활성화되고 `reasoning_content`를 반환한다.
+top-level `reasoning_effort`는 `low`, `high`, `max`를 지원하며 기본값은
+`max`다.
+
+K3는 preserved thinking history mode로 학습됐다. 다중 턴 대화와 tool
+call에서는 API가 반환한 assistant message를 그대로 다음 `messages`에
+넣어야 한다. `content`뿐 아니라 `reasoning_content`, `tool_calls`까지
+보존해야 한다. 일부 field만 재구성하면 이전 사고 상태와의 연결이
+깨져 품질이 불안정해질 수 있다.
+
+### 7. 라이선스
+
+코드와 모델 가중치는 Kimi K3 License로 공개된다. 핵심 조건의 한국어
+요약은 다음과 같다.
+
+1. 저작권과 허가 고지를 복사본 또는 실질적 부분에 포함하고 관련 법률을
+   준수해야 한다.
+2. 제3자가 입력·파라미터·학습 데이터를 의미 있게 제어하는
+   Model-as-a-Service 사업을 운영하면서 사용자와 계열사의 합산 매출이
+   연속 12개월 동안 미화 2천만 달러를 넘으면, K3나 파생물을 상업적으로
+   사용하기 전에 Moonshot AI와 별도 계약을 체결해야 한다.
+3. K3 또는 파생물을 사용하는 상용 제품·서비스가 월간 활성 사용자
+   1억 명을 넘거나 월 매출 미화 2천만 달러를 넘으면 제품 UI에
+   `Kimi K3`를 눈에 띄게 표시해야 한다.
+4. 내부 사용과 Moonshot 공식 제품 또는 인증 inference partner를 통한
+   사용에는 2·3항의 특별 조건이 적용되지 않는다.
+5. 소프트웨어와 출력은 무보증으로 제공되고 손해 책임이 제한된다.
+
+정확한 의무와 용어 정의는
+[영문 라이선스 원문](https://huggingface.co/moonshotai/Kimi-K3/blob/main/LICENSE)을
+기준으로 확인해야 한다.
+
+---
+
+## 기술 블로그 한국어 번역 요약
 
 ## Kimi K3: 개방형 프런티어 지능
 
 Kimi는 자사에서 가장 강력한 모델인 Kimi K3를 소개한다. K3는 Kimi Delta Attention과 Attention Residuals를 기반으로 한 2.8조 파라미터 모델이며, 네이티브 비전과 100만 토큰 문맥 창을 갖춘 최초의 개방형 3T급 모델이라고 설명한다. 장시간 코딩, 지식 작업, 추론을 목표로 한다.
 
-회사는 K3가 가장 강력한 폐쇄형 모델보다는 전반적으로 뒤처지지만, 자사의 평가군에서는 다른 시험 모델을 지속적으로 앞서는 프런티어급 성능을 보였다고 주장한다. K3는 Kimi 웹, Kimi Work, Kimi Code와 API에서 제공되며, 출시 시점에는 최대 사고 노력을 기본으로 사용한다. 전체 가중치는 2026년 7월 27일까지 공개할 예정이라고 밝혔다.
+회사는 K3가 가장 강력한 폐쇄형 모델보다는 전반적으로 뒤처지지만, 자사의
+평가군에서는 다른 시험 모델을 지속적으로 앞서는 프런티어급 성능을
+보였다고 주장한다. K3는 Kimi 웹, Kimi Work, Kimi Code와 API에서
+제공되며 출시 시점에는 최대 사고 노력을 기본으로 사용한다. 기술 블로그
+당시 2026년 7월 27일까지 공개하겠다고 예고한 전체 가중치는
+2026-07-28 재확인 시 Hugging Face에 실제 공개됐다.
 
 ## 개방형 3T급 모델
 
@@ -43,7 +189,11 @@ Kimi Work의 Widget은 채팅 안에서 로컬 데이터나 외부 플러그인�
 
 KDA와 AttnRes가 모델의 핵심 뼈대다. 16/896 전문가를 활성화하는 Stable LatentMoE에서는 라우팅과 최적화가 특히 중요하다. Quantile Balancing은 라우터 점수의 분위수로 전문가 할당을 정하고, Per-Head Muon은 어텐션 헤드를 독립적으로 최적화한다. SiTU와 Gated MLA는 각각 활성화 제어와 어텐션 선택성을 개선한다.
 
-SFT부터 MXFP4 가중치와 MXFP8 활성화를 사용하는 양자화 인지 학습을 적용했다. 대규모 전문가 병렬 학습의 처리량을 위해 정적 shape와 중요 경로에서 host 동기화가 없는 완전 균형 방식을 도입했다고 한다. 추론에는 64개 이상 가속기의 supernode 구성을 권장하며, KDA용 prefill cache의 vLLM 구현을 공개할 계획이다.
+SFT부터 MXFP4 가중치와 MXFP8 활성화를 사용하는 양자화 인지 학습을
+적용했다. 대규모 전문가 병렬 학습의 처리량을 위해 정적 shape와 중요
+경로에서 host 동기화가 없는 완전 균형 방식을 도입했다고 한다. 추론에는
+64개 이상 가속기의 supernode 구성을 권장하며, 모델 공개 후 vLLM
+recipe도 연결했다.
 
 ## 이용 방법
 

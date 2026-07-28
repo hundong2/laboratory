@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Kimi K3 공개 가중치와 Hugging Face 실습](kimi-k3/README.md) - 2026-07-28
 - [ ] [DeepEval 한국어 학습 가이드](deepeval/guide/README.md) - 2026-07-28
 - [ ] [.NET Agent Skills 정식 출시와 운영 실습](dotnet-agent-skills-release/README.md) - 2026-07-27
 - [ ] [FlashSAC 문장 대조 번역과 오프폴리시 강화학습 실습](flashsac-off-policy-robot-control/README.md) - 2026-07-27
@@ -35,7 +36,6 @@
 - [ ] [TabFM: 표 데이터용 Zero-shot Foundation Model](tabfm-tabular-foundation-model/README.md) - 2026-07-21
 - [ ] [에이전트형 세계 모델](agentic-world-models/README.md) - 2026-07-20
 - [ ] [Hands-On AI Engineering 한국어 학습 가이드](https://github.com/hundong2/Hands-On-AI-Engineering/blob/41433fcc3277de2846ae56eebf4696b265015bdb/guide/README.md) - 2026-07-20
-- [ ] [Kimi K3: 개방형 3T급 멀티모달 에이전트 모델](kimi-k3/README.md) - 2026-07-20
 - [ ] [Orca 한국어 사용 가이드](https://github.com/hundong2/orca/blob/a9e645b5b2e10874a2b8274deb7d641eda66421f/guide.md) - 2026-07-20
 - [ ] [NVIDIA Nemotron 3 Nano Omni](nvidia-nemotron-3-nano-omni/README.md) - 2026-07-20
 - [ ] [S2Vec: 자기지도 지리공간 임베딩](s2vec-geospatial-embeddings/README.md) - 2026-07-18

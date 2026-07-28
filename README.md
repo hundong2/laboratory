@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [LightlyStudio 한국어 학습 가이드](lightly-studio/guide/README.md) - 2026-07-28
 - [ ] [Kimi K3 공개 가중치와 Hugging Face 실습](kimi-k3/README.md) - 2026-07-28
 - [ ] [DeepEval 한국어 학습 가이드](deepeval/guide/README.md) - 2026-07-28
 - [ ] [.NET Agent Skills 정식 출시와 운영 실습](dotnet-agent-skills-release/README.md) - 2026-07-27

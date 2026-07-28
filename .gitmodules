@@ -37,3 +37,6 @@
 [submodule "deepeval"]
 	path = deepeval
 	url = https://github.com/hundong2/deepeval.git
+[submodule "lightly-studio"]
+	path = lightly-studio
+	url = https://github.com/hundong2/lightly-studio.git

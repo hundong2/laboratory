@@ -40,3 +40,6 @@
 [submodule "lightly-studio"]
 	path = lightly-studio
 	url = https://github.com/hundong2/lightly-studio.git
+[submodule "codex-security"]
+	path = codex-security
+	url = https://github.com/hundong2/codex-security.git

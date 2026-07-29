@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Codex Security 한국어 학습 가이드](codex-security/guide/README.md) - 2026-07-29
 - [ ] [LightlyStudio 한국어 학습 가이드](lightly-studio/guide/README.md) - 2026-07-28
 - [ ] [Kimi K3 공개 가중치와 Hugging Face 실습](kimi-k3/README.md) - 2026-07-28
 - [ ] [DeepEval 한국어 학습 가이드](deepeval/guide/README.md) - 2026-07-28

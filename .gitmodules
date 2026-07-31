@@ -43,3 +43,6 @@
 [submodule "codex-security"]
 	path = codex-security
 	url = https://github.com/hundong2/codex-security.git
+[submodule "openship"]
+	path = openship
+	url = https://github.com/hundong2/openship.git

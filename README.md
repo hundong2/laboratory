@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Openship 한국어 학습 가이드](https://github.com/hundong2/openship/blob/247130abaaf47910ceddf90c322c5fb78720e08a/guide/README.md) - 2026-07-31
 - [ ] [Gemini Robotics 2 전신 지능과 로봇 협업](gemini-robotics-2-whole-body-intelligence/README.md) - 2026-07-31
 - [ ] [GitHub Stacked Pull Requests 공개 미리보기](github-stacked-pull-requests-public-preview/README.md) - 2026-07-31
 - [ ] [Cerebras 엔터프라이즈 지식 베이스](cerebras-enterprise-knowledge-base/README.md) - 2026-07-30

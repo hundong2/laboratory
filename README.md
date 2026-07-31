@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [LightlyStudio 한국어 학습 가이드](lightly-studio/guide/README.md) - 2026-07-31
 - [ ] [Openship 한국어 학습 가이드](https://github.com/hundong2/openship/blob/247130abaaf47910ceddf90c322c5fb78720e08a/guide/README.md) - 2026-07-31
 - [ ] [Gemini Robotics 2 전신 지능과 로봇 협업](gemini-robotics-2-whole-body-intelligence/README.md) - 2026-07-31
 - [ ] [GitHub Stacked Pull Requests 공개 미리보기](github-stacked-pull-requests-public-preview/README.md) - 2026-07-31
@@ -12,7 +13,6 @@
 - [ ] [Intelligence Ownership와 업무 특화 모델](intelligence-ownership-task-models/README.md) - 2026-07-30
 - [ ] [Topcoat Rust 풀스택 웹 프레임워크](topcoat-rust-fullstack/README.md) - 2026-07-30
 - [ ] [Codex Security 한국어 학습 가이드](codex-security/guide/README.md) - 2026-07-29
-- [ ] [LightlyStudio 한국어 학습 가이드](lightly-studio/guide/README.md) - 2026-07-28
 - [ ] [Kimi K3 공개 가중치와 Hugging Face 실습](kimi-k3/README.md) - 2026-07-28
 - [ ] [DeepEval 한국어 학습 가이드](deepeval/guide/README.md) - 2026-07-28
 - [ ] [.NET Agent Skills 정식 출시와 운영 실습](dotnet-agent-skills-release/README.md) - 2026-07-27

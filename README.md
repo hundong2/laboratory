@@ -4,6 +4,11 @@
 
 ## TODO
 
+- [ ] [GitHub Stacked Pull Requests 공개 미리보기](github-stacked-pull-requests-public-preview/README.md) - 2026-07-31
+- [ ] [Cerebras 엔터프라이즈 지식 베이스](cerebras-enterprise-knowledge-base/README.md) - 2026-07-30
+- [ ] [AREX 재귀적 자기개선 Deep Research](arex-recursive-self-improving-research/README.md) - 2026-07-30
+- [ ] [Intelligence Ownership와 업무 특화 모델](intelligence-ownership-task-models/README.md) - 2026-07-30
+- [ ] [Topcoat Rust 풀스택 웹 프레임워크](topcoat-rust-fullstack/README.md) - 2026-07-30
 - [ ] [Codex Security 한국어 학습 가이드](codex-security/guide/README.md) - 2026-07-29
 - [ ] [LightlyStudio 한국어 학습 가이드](lightly-studio/guide/README.md) - 2026-07-28
 - [ ] [Kimi K3 공개 가중치와 Hugging Face 실습](kimi-k3/README.md) - 2026-07-28

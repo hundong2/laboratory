@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [OpenAI의 수학·이론 컴퓨터과학 10대 성과](ten-advances-mathematics-theoretical-cs/README.md) - 2026-08-03
 - [ ] [LightlyStudio 한국어 학습 가이드](lightly-studio/guide/README.md) - 2026-07-31
 - [ ] [Openship 한국어 학습 가이드](https://github.com/hundong2/openship/blob/247130abaaf47910ceddf90c322c5fb78720e08a/guide/README.md) - 2026-07-31
 - [ ] [Gemini Robotics 2 전신 지능과 로봇 협업](gemini-robotics-2-whole-body-intelligence/README.md) - 2026-07-31

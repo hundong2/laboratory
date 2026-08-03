@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [12가지 JEPA 아키텍처 비교와 실습](twelve-jepa-architectures/README.md) - 2026-08-03
 - [ ] [I-JEPA 한국어 학습 가이드](https://github.com/hundong2/ijepa/blob/b1bbb4f84262bbb26a4ce747bd5ad1439a547736/guide/README.md) - 2026-08-03
 - [ ] [OpenFabrik 한국어 학습 가이드](https://github.com/hundong2/OpenFabrik/blob/b83dc6000be90dc28e499cbf4f86b494b4091718/guide/README.md) - 2026-08-03
 - [ ] [OpenAI의 수학·이론 컴퓨터과학 10대 성과](ten-advances-mathematics-theoretical-cs/README.md) - 2026-08-03

@@ -52,3 +52,6 @@
 [submodule "ijepa"]
 	path = ijepa
 	url = https://github.com/hundong2/ijepa.git
+[submodule "marker"]
+	path = marker
+	url = https://github.com/hundong2/marker.git

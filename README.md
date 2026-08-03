@@ -13,7 +13,7 @@
 - [ ] [I-JEPA 한국어 학습 가이드](https://github.com/hundong2/ijepa/blob/b1bbb4f84262bbb26a4ce747bd5ad1439a547736/guide/README.md) - 2026-08-03
 - [ ] [OpenFabrik 한국어 학습 가이드](https://github.com/hundong2/OpenFabrik/blob/b83dc6000be90dc28e499cbf4f86b494b4091718/guide/README.md) - 2026-08-03
 - [ ] [OpenAI의 수학·이론 컴퓨터과학 10대 성과](ten-advances-mathematics-theoretical-cs/README.md) - 2026-08-03
-- [ ] [LightlyStudio 한국어 학습 가이드](lightly-studio/guide/README.md) - 2026-07-31
+- [ ] [LightlyStudio 한국어 학습 가이드](https://github.com/hundong2/lightly-studio/blob/6bb35e5ca2f6acbbab7d9be9bb5365e950c31511/guide/README.md) - 2026-07-31
 - [ ] [Openship 한국어 학습 가이드](https://github.com/hundong2/openship/blob/247130abaaf47910ceddf90c322c5fb78720e08a/guide/README.md) - 2026-07-31
 - [ ] [Gemini Robotics 2 전신 지능과 로봇 협업](gemini-robotics-2-whole-body-intelligence/README.md) - 2026-07-31
 - [ ] [GitHub Stacked Pull Requests 공개 미리보기](github-stacked-pull-requests-public-preview/README.md) - 2026-07-31
@@ -21,12 +21,12 @@
 - [ ] [AREX 재귀적 자기개선 Deep Research](arex-recursive-self-improving-research/README.md) - 2026-07-30
 - [ ] [Intelligence Ownership와 업무 특화 모델](intelligence-ownership-task-models/README.md) - 2026-07-30
 - [ ] [Topcoat Rust 풀스택 웹 프레임워크](topcoat-rust-fullstack/README.md) - 2026-07-30
-- [ ] [Codex Security 한국어 학습 가이드](codex-security/guide/README.md) - 2026-07-29
+- [ ] [Codex Security 한국어 학습 가이드](https://github.com/hundong2/codex-security/blob/5443d8f573330ba7fbac9d6c8c357fcd0b09e9de/guide/README.md) - 2026-07-29
 - [ ] [Kimi K3 공개 가중치와 Hugging Face 실습](kimi-k3/README.md) - 2026-07-28
-- [ ] [DeepEval 한국어 학습 가이드](deepeval/guide/README.md) - 2026-07-28
+- [ ] [DeepEval 한국어 학습 가이드](https://github.com/hundong2/deepeval/blob/655c1c42f8718c0d838316ac932f0bfed3475370/guide/README.md) - 2026-07-28
 - [ ] [.NET Agent Skills 정식 출시와 운영 실습](dotnet-agent-skills-release/README.md) - 2026-07-27
 - [ ] [FlashSAC 문장 대조 번역과 오프폴리시 강화학습 실습](flashsac-off-policy-robot-control/README.md) - 2026-07-27
-- [ ] [GOT-OCR2.0 한국어 학습 가이드](GOT-OCR2.0/guide/README.md) - 2026-07-27
+- [ ] [GOT-OCR2.0 한국어 학습 가이드](https://github.com/hundong2/GOT-OCR2.0/blob/1ca45aac1fae96e60f1f8d571acddd9082ccd50e/guide/README.md) - 2026-07-27
 - [ ] [Detectron2 한국어 학습 가이드](https://github.com/hundong2/detectron2/blob/80eb04a05de32c9f8b2c852428e43f12ba550867/guide/README.md) - 2026-07-26
 - [ ] [YOLO v1 문장 대조 번역과 객체 탐지 실습](you-only-look-once-v1/README.md) - 2026-07-26
 - [ ] [Attention Is All You Need 문장 대조 번역과 실습](attention-is-all-you-need/README.md) - 2026-07-26

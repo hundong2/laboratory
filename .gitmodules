@@ -49,3 +49,6 @@
 [submodule "OpenFabrik"]
 	path = OpenFabrik
 	url = https://github.com/hundong2/OpenFabrik.git
+[submodule "ijepa"]
+	path = ijepa
+	url = https://github.com/hundong2/ijepa.git

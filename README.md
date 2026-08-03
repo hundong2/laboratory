@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [UI-JEPA 논문 번역·해설과 UI 의도 추론 실습](ui-jepa-paper/README.md) - 2026-08-03
 - [ ] [V-JEPA 논문 번역·해설과 비디오 표현 실습](v-jepa-paper/README.md) - 2026-08-03
 - [ ] [MC-JEPA 논문 번역·해설과 다중 작업 실습](mc-jepa-paper/README.md) - 2026-08-03
 - [ ] [I-JEPA 논문 번역·해설과 재현 실습](i-jepa-paper/README.md) - 2026-08-03

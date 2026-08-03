@@ -46,3 +46,6 @@
 [submodule "openship"]
 	path = openship
 	url = https://github.com/hundong2/openship.git
+[submodule "OpenFabrik"]
+	path = OpenFabrik
+	url = https://github.com/hundong2/OpenFabrik.git

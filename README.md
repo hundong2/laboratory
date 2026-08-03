@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [MC-JEPA 논문 번역·해설과 다중 작업 실습](mc-jepa-paper/README.md) - 2026-08-03
 - [ ] [I-JEPA 논문 번역·해설과 재현 실습](i-jepa-paper/README.md) - 2026-08-03
 - [ ] [12가지 JEPA 아키텍처 비교와 실습](twelve-jepa-architectures/README.md) - 2026-08-03
 - [ ] [I-JEPA 한국어 학습 가이드](https://github.com/hundong2/ijepa/blob/b1bbb4f84262bbb26a4ce747bd5ad1439a547736/guide/README.md) - 2026-08-03

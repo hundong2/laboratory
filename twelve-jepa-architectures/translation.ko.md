@@ -140,3 +140,7 @@ point patch embedding의 순서를 정하고, context와 target patch를 구성�
 - [기초 분류 실습](01_foundations.ipynb)
 - [mask와 latent loss 실습](02_practice.ipynb)
 - [collapse 진단과 실험 설계](03_advanced.ipynb)
+- [I-JEPA 개별 논문 번역·실습](../i-jepa-paper/README.md)
+- [MC-JEPA 개별 논문 번역·실습](../mc-jepa-paper/README.md)
+- [V-JEPA 개별 논문 번역·실습](../v-jepa-paper/README.md)
+- [UI-JEPA 개별 논문 번역·실습](../ui-jepa-paper/README.md)

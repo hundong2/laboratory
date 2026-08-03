@@ -11,6 +11,7 @@
 - [상세 정리](#상세-정리)
 - [용어 정리](#용어-정리)
 - [실습 학습 가이드](#실습-학습-가이드)
+- [연계 심화 자료](#연계-심화-자료)
 - [다음 학습 경로](#다음-학습-경로)
 
 ## 출처와 작업 범위
@@ -162,12 +163,30 @@ ROI(functional region)와 시간축을 교차해 target을 구성합니다. 의�
 세 notebook은 외부 패키지 없이 실행할 수 있는 작은 개념 실습입니다. 실제
 논문 모델과 성능을 재현하지 않습니다.
 
+## 연계 심화 자료
+
+12개 유형 중 현재 이 저장소에 문장 대조 번역, 상세 해설과 단계별 실습이 모두
+준비된 연구는 다음과 같습니다.
+
+| 유형 | 심화 자료 | 이어서 확인할 핵심 |
+|---|---|---|
+| I-JEPA | [논문 번역·해설과 재현 실습](../i-jepa-paper/README.md) | image block masking, EMA target, linear probe |
+| MC-JEPA | [논문 번역·해설과 다중 작업 실습](../mc-jepa-paper/README.md) | content·motion 공동 학습과 optical flow |
+| V-JEPA | [논문 번역·해설과 video 표현 실습](../v-jepa-paper/README.md) | 3D multi-block masking, attentive probe |
+| UI-JEPA | [논문 번역·해설과 UI 의도 추론 실습](../ui-jepa-paper/README.md) | temporal masking, OCR, LoRA, zero-shot 평가 |
+
+이 연결은 단순히 모델 이름을 나열하는 대신 `image -> content·motion -> video ->
+UI intent`로 예측 대상이 어떻게 확장되는지 비교하는 학습 경로입니다. 각 자료는
+사용한 논문 버전과 번역 범위, 재현하지 못한 부분을 별도로 표시합니다.
+
 ## 다음 학습 경로
 
 1. [사이트 학습용 재구성본](translation.ko.md)으로 12개 연구의 위치를
    파악합니다.
 2. 세 notebook을 순서대로 실행해 mask와 latent target의 역할을 익힙니다.
-3. 관심 모달리티의 원 논문에서 encoder, target 구성, collapse 방지, 평가
+3. [연계 심화 자료](#연계-심화-자료)에서 I-JEPA부터 UI-JEPA까지 공통 요소와
+   변형 지점을 대조합니다.
+4. 관심 모달리티의 원 논문에서 encoder, target 구성, collapse 방지, 평가
    protocol을 표로 추출합니다.
-4. 같은 데이터에서 reconstruction baseline과 latent prediction을 비교합니다.
-5. 사전학습 지표와 downstream 전이 성능이 함께 좋아지는지 검증합니다.
+5. 같은 데이터에서 reconstruction baseline과 latent prediction을 비교합니다.
+6. 사전학습 지표와 downstream 전이 성능이 함께 좋아지는지 검증합니다.

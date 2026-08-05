@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Hard Intersection Multimodal Sample 분석과 실습](hard-intersection-multimodal-sample/README.md) - 2026-08-06
 - [ ] [Marker 한국어 학습 가이드](https://github.com/hundong2/marker/blob/d681466eea5da3d089917415d58a9b08834faff2/guide/README.md) - 2026-08-04
 - [ ] [UI-JEPA 논문 번역·해설과 UI 의도 추론 실습](ui-jepa-paper/README.md) - 2026-08-03
 - [ ] [V-JEPA 논문 번역·해설과 비디오 표현 실습](v-jepa-paper/README.md) - 2026-08-03

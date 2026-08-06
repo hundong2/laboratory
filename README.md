@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [How LLMs Actually Work 번역·해설과 Transformer 내부 실습](how-llms-actually-work/README.md) - 2026-08-06
 - [ ] [Awesome Free AI Course Notes 한국어 과정별 번역과 학습 가이드](https://github.com/hundong2/awesome-free-ai-course-notes/blob/a35711fd46c49844686098e9f8a6e2538f9029f1/guide/README.md) - 2026-08-06
 - [ ] [Hard Intersection Multimodal Sample 분석과 실습](hard-intersection-multimodal-sample/README.md) - 2026-08-06
 - [ ] [Marker 한국어 학습 가이드](https://github.com/hundong2/marker/blob/d681466eea5da3d089917415d58a9b08834faff2/guide/README.md) - 2026-08-04

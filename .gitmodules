@@ -58,3 +58,6 @@
 [submodule "awesome-free-ai-course-notes"]
 	path = awesome-free-ai-course-notes
 	url = https://github.com/hundong2/awesome-free-ai-course-notes.git
+[submodule "image-pipes"]
+	path = image-pipes
+	url = https://github.com/hundong2/image-pipes.git

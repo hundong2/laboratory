@@ -55,3 +55,6 @@
 [submodule "marker"]
 	path = marker
 	url = https://github.com/hundong2/marker.git
+[submodule "awesome-free-ai-course-notes"]
+	path = awesome-free-ai-course-notes
+	url = https://github.com/hundong2/awesome-free-ai-course-notes.git

@@ -61,3 +61,6 @@
 [submodule "image-pipes"]
 	path = image-pipes
 	url = https://github.com/hundong2/image-pipes.git
+[submodule "monoscope"]
+	path = monoscope
+	url = https://github.com/hundong2/monoscope.git

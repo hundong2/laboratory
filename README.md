@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Monoscope 한국어 번역과 학습 가이드](https://github.com/hundong2/monoscope/blob/2b9811945a93aeab60976228292a8a6aba6ecacf/guide/README.md) - 2026-08-09
 - [ ] [Image Pipes 한국어 번역과 학습 가이드](https://github.com/hundong2/image-pipes/blob/fded0b8cc05279524c8f7494891203bdbb124bca/guide/README.md) - 2026-08-06
 - [ ] [How LLMs Actually Work 번역·해설과 Transformer 내부 실습](how-llms-actually-work/README.md) - 2026-08-06
 - [ ] [Awesome Free AI Course Notes 한국어 과정별 번역과 학습 가이드](https://github.com/hundong2/awesome-free-ai-course-notes/blob/a35711fd46c49844686098e9f8a6e2538f9029f1/guide/README.md) - 2026-08-06

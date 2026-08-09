@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Kimodo 한국어 번역과 모션 생성 학습 가이드](https://github.com/hundong2/kimodo/blob/2c7e55fab1c9001b6647361c86e727e97c4f5da3/guide/README.md) - 2026-08-09
 - [ ] [Monoscope 한국어 번역과 학습 가이드](https://github.com/hundong2/monoscope/blob/2b9811945a93aeab60976228292a8a6aba6ecacf/guide/README.md) - 2026-08-09
 - [ ] [Image Pipes 한국어 번역과 학습 가이드](https://github.com/hundong2/image-pipes/blob/fded0b8cc05279524c8f7494891203bdbb124bca/guide/README.md) - 2026-08-06
 - [ ] [How LLMs Actually Work 번역·해설과 Transformer 내부 실습](how-llms-actually-work/README.md) - 2026-08-06

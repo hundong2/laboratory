@@ -64,3 +64,6 @@
 [submodule "monoscope"]
 	path = monoscope
 	url = https://github.com/hundong2/monoscope.git
+[submodule "kimodo"]
+	path = kimodo
+	url = https://github.com/hundong2/kimodo.git

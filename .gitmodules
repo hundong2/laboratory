@@ -67,3 +67,6 @@
 [submodule "kimodo"]
 	path = kimodo
 	url = https://github.com/hundong2/kimodo.git
+[submodule "labs-OO-Agents"]
+	path = labs-OO-Agents
+	url = https://github.com/hundong2/labs-OO-Agents.git

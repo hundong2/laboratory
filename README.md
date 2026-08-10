@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Mousecrack 한국어 번역과 학습 가이드](https://github.com/hundong2/mousecrack/blob/39f59a16bec34b8bea0268b454998e7553ee932a/guide/README.md) - 2026-08-10
 - [ ] [NVIDIA OO Agents 한국어 번역과 학습 가이드](https://github.com/hundong2/labs-OO-Agents/blob/38d5bee234afe6099e65335d1327e769c40f66b4/guide/README.md) - 2026-08-09
 - [ ] [Kimodo 한국어 번역과 모션 생성 학습 가이드](https://github.com/hundong2/kimodo/blob/2c7e55fab1c9001b6647361c86e727e97c4f5da3/guide/README.md) - 2026-08-09
 - [ ] [Monoscope 한국어 번역과 학습 가이드](https://github.com/hundong2/monoscope/blob/2b9811945a93aeab60976228292a8a6aba6ecacf/guide/README.md) - 2026-08-09

@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Oracle AI Database 26ai Agent Memory 번역과 실습](oracle-agent-memory-26ai/README.md) - 2026-08-11
 - [ ] [AgentRadio 수동 인지 멀티에이전트 협업 논문 번역과 실습](agentradio-passive-awareness/README.md) - 2026-08-11
 - [ ] [Mousecrack 한국어 번역과 학습 가이드](https://github.com/hundong2/mousecrack/blob/39f59a16bec34b8bea0268b454998e7553ee932a/guide/README.md) - 2026-08-10
 - [ ] [NVIDIA OO Agents 한국어 번역과 학습 가이드](https://github.com/hundong2/labs-OO-Agents/blob/38d5bee234afe6099e65335d1327e769c40f66b4/guide/README.md) - 2026-08-09

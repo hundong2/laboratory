@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Attention Residuals 한국어 번역과 학습 가이드](https://github.com/hundong2/Attention-Residuals/blob/995b62500b492d8c01b8a411cb80bcab0018f8b1/guide/README.md) - 2026-08-12
 - [ ] [Oracle AI Database 26ai Agent Memory 번역과 실습](oracle-agent-memory-26ai/README.md) - 2026-08-11
 - [ ] [AgentRadio 수동 인지 멀티에이전트 협업 논문 번역과 실습](agentradio-passive-awareness/README.md) - 2026-08-11
 - [ ] [Mousecrack 한국어 번역과 학습 가이드](https://github.com/hundong2/mousecrack/blob/39f59a16bec34b8bea0268b454998e7553ee932a/guide/README.md) - 2026-08-10

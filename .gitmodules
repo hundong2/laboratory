@@ -73,3 +73,6 @@
 [submodule "mousecrack"]
 	path = mousecrack
 	url = https://github.com/hundong2/mousecrack.git
+[submodule "Attention-Residuals"]
+	path = Attention-Residuals
+	url = https://github.com/hundong2/Attention-Residuals.git

@@ -76,3 +76,6 @@
 [submodule "Attention-Residuals"]
 	path = Attention-Residuals
 	url = https://github.com/hundong2/Attention-Residuals.git
+[submodule "Maui"]
+	path = Maui
+	url = https://github.com/hundong2/Maui.git

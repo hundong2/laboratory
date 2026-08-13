@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Gemini Enterprise Agent Platform 그라운딩 개요 번역과 실습](gemini-enterprise-grounding/README.md) - 2026-08-14
 - [ ] [OpenChamber 한국어 번역과 학습 가이드](https://github.com/hundong2/openchamber/blob/a95553a4a15916660bd4326ea97917c09639b4d7/guide/README.md) - 2026-08-14
 - [ ] [.NET MAUI Community Toolkit 한국어 번역과 학습 가이드](https://github.com/hundong2/Maui/blob/c7019befde8fb4d8c5a2640fe9f7636c5349d0b5/guide/README.md) - 2026-08-13
 - [ ] [Attention Residuals 한국어 번역과 학습 가이드](https://github.com/hundong2/Attention-Residuals/blob/995b62500b492d8c01b8a411cb80bcab0018f8b1/guide/README.md) - 2026-08-12

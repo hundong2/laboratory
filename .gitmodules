@@ -88,3 +88,6 @@
 [submodule "Graft"]
 	path = Graft
 	url = https://github.com/hundong2/Graft.git
+[submodule "pocket-tts"]
+	path = pocket-tts
+	url = https://github.com/hundong2/pocket-tts.git

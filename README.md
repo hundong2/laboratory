@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Pocket TTS 한국어 번역과 CPU 음성 합성 학습 가이드](https://github.com/hundong2/pocket-tts/blob/5b0cd9ff65036b38d1bb21314e6839cb28f31d75/guide/README.md) - 2026-08-14
 - [ ] [Graft 한국어 번역과 코드 컨텍스트 그래프 학습 가이드](https://github.com/hundong2/Graft/blob/940b23409832ffeca956453480240d5385a2b283/guide/README.md) - 2026-08-14
 - [ ] [h3-metal 한국어 번역과 학습 가이드](https://github.com/hundong2/h3.c/blob/4b861b1ff3e489be6a4853d2a10ac7784c5bc504/guide/README.md) - 2026-08-14
 - [ ] [Gemini Enterprise Agent Platform 그라운딩 개요 번역과 실습](gemini-enterprise-grounding/README.md) - 2026-08-14

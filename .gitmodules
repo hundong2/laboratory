@@ -82,3 +82,6 @@
 [submodule "openchamber"]
 	path = openchamber
 	url = https://github.com/hundong2/openchamber.git
+[submodule "h3.c"]
+	path = h3.c
+	url = https://github.com/hundong2/h3.c.git

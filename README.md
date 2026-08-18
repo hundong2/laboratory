@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Kimi K3 C 추론 엔진 한국어 번역과 학습 가이드](https://github.com/hundong2/kimi-k3-in-c/blob/5c317dc75ba6e1f4499ec19c4711d50e517c9211/guide/README.md) - 2026-08-18
 - [ ] [AI 텍스트 워터마킹 원리·검출·편집 내성 번역과 실습](ai-text-watermarking/README.md) - 2026-08-17
 - [ ] [Pocket TTS 한국어 번역과 CPU 음성 합성 학습 가이드](https://github.com/hundong2/pocket-tts/blob/5b0cd9ff65036b38d1bb21314e6839cb28f31d75/guide/README.md) - 2026-08-14
 - [ ] [Graft 한국어 번역과 코드 컨텍스트 그래프 학습 가이드](https://github.com/hundong2/Graft/blob/940b23409832ffeca956453480240d5385a2b283/guide/README.md) - 2026-08-14

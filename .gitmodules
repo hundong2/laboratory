@@ -94,3 +94,6 @@
 [submodule "kimi-k3-in-c"]
 	path = kimi-k3-in-c
 	url = https://github.com/hundong2/kimi-k3-in-c.git
+[submodule "modular"]
+	path = modular
+	url = https://github.com/hundong2/modular.git

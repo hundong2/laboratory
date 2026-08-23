@@ -97,3 +97,6 @@
 [submodule "modular"]
 	path = modular
 	url = https://github.com/hundong2/modular.git
+[submodule "openhuman"]
+	path = openhuman
+	url = https://github.com/hundong2/openhuman.git

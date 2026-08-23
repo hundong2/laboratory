@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [OpenHuman 한국어 번역과 local-first agent harness 학습 가이드](https://github.com/hundong2/openhuman/blob/8c7110fc0b27939f78018a4752d059de201e080c/guide/README.md) - 2026-08-23
 - [ ] [Modular Platform 한국어 번역과 Mojo·MAX 학습 가이드](https://github.com/hundong2/modular/blob/6e70ea1899f8d1371ada292730da692a77fc7725/guide/README.md) - 2026-08-20
 - [ ] [Kimi K3 C 추론 엔진 한국어 번역과 학습 가이드](https://github.com/hundong2/kimi-k3-in-c/blob/5c317dc75ba6e1f4499ec19c4711d50e517c9211/guide/README.md) - 2026-08-18
 - [ ] [AI 텍스트 워터마킹 원리·검출·편집 내성 번역과 실습](ai-text-watermarking/README.md) - 2026-08-17

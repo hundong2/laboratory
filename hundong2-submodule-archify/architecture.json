@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "hundong2 Fork Submodules Learning Architecture",
+    "output": "architecture.html",
+    "quality_profile": "showcase",
+    "viewBox": [1300, 720],
+    "views": [
+      {
+        "id": "primary-path",
+        "label": "Primary learning path",
+        "focus": ["learner", "root_index", "submodule_inventory", "github_forks", "vision_group", "ocr_group", "explain_group", "eval_security_group", "agent_platform_group", "systems_group", "archify_outputs"],
+        "note": "Follow how a learner moves from the workspace index to grouped fork evidence and then to guide artifacts."
+      },
+      {
+        "id": "code-evidence",
+        "label": "Code evidence",
+        "focus": ["submodule_inventory", "github_forks", "vision_group", "ocr_group", "explain_group", "eval_security_group", "agent_platform_group", "systems_group"],
+        "note": "Each group is grounded in top-level submodules, not nested vendor dependencies."
+      },
+      {
+        "id": "practice-boundary",
+        "label": "Practice outputs",
+        "focus": ["learner", "external_assets", "archify_outputs"],
+        "note": "Practice material avoids assuming cloned external paths beyond the current submodule inventory."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "learner",
+      "type": "external",
+      "label": "Korean learner",
+      "sublabel": "reads, runs, compares",
+      "pos": [40, 260],
+      "size": [135, 64]
+    },
+    {
+      "id": "root_index",
+      "type": "frontend",
+      "label": "Root README index",
+      "sublabel": "TODO learning links",
+      "pos": [240, 260],
+      "size": [145, 64]
+    },
+    {
+      "id": "submodule_inventory",
+      "type": "database",
+      "label": ".gitmodules inventory",
+      "sublabel": "hundong2 top-level forks",
+      "pos": [440, 260],
+      "size": [155, 64],
+      "tag": "34 repos"
+    },
+    {
+      "id": "github_forks",
+      "type": "cloud",
+      "label": "GitHub forks",
+      "sublabel": "remote README and code",
+      "pos": [640, 260],
+      "size": [145, 64],
+      "tag": "hundong2/*"
+    },
+    {
+      "id": "vision_group",
+      "type": "backend",
+      "label": "Vision and perception",
+      "sublabel": "CV, 3D, detection",
+      "pos": [820, 70],
+      "size": [170, 66]
+    },
+    {
+      "id": "ocr_group",
+      "type": "backend",
+      "label": "OCR and document AI",
+      "sublabel": "OCR, parsing, tables",
+      "pos": [1050, 70],
+      "size": [180, 66]
+    },
+    {
+      "id": "explain_group",
+      "type": "frontend",
+      "label": "Explainability and study",
+      "sublabel": "attention, courses",
+      "pos": [1050, 240],
+      "size": [180, 66]
+    },
+    {
+      "id": "eval_security_group",
+      "type": "security",
+      "label": "Evaluation and security",
+      "sublabel": "eval, security, traces",
+      "pos": [1050, 410],
+      "size": [180, 66]
+    },
+    {
+      "id": "agent_platform_group",
+      "type": "backend",
+      "label": "Agents and platforms",
+      "sublabel": "agents, orchestration",
+      "pos": [850, 410],
+      "size": [170, 66]
+    },
+    {
+      "id": "systems_group",
+      "type": "backend",
+      "label": "Systems and runtimes",
+      "sublabel": "runtime, C, platform",
+      "pos": [640, 410],
+      "size": [170, 66]
+    },
+    {
+      "id": "external_assets",
+      "type": "external",
+      "label": "External assets",
+      "sublabel": "weights, datasets, APIs",
+      "pos": [1050, 560],
+      "size": [170, 64],
+      "tag": "repo-specific"
+    },
+    {
+      "id": "archify_outputs",
+      "type": "frontend",
+      "label": "Archify outputs",
+      "sublabel": "HTML diagram and guide",
+      "pos": [440, 560],
+      "size": [155, 64]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Local workspace: D:/workspace/laboratory",
+      "wraps": ["root_index", "submodule_inventory", "archify_outputs"]
+    },
+    {
+      "kind": "region",
+      "label": "Top-level hundong2 GitHub submodules",
+      "wraps": ["github_forks", "vision_group", "ocr_group", "explain_group", "eval_security_group", "agent_platform_group", "systems_group"]
+    },
+    {
+      "kind": "security-group",
+      "label": "Unknown per-repo runtime boundary",
+      "wraps": ["external_assets"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "learner-to-index",
+      "from": "learner",
+      "to": "root_index",
+      "variant": "emphasis"
+    },
+    {
+      "id": "index-to-inventory",
+      "from": "root_index",
+      "to": "submodule_inventory"
+    },
+    {
+      "id": "inventory-to-github",
+      "from": "submodule_inventory",
+      "to": "github_forks"
+    },
+    {
+      "id": "github-to-vision",
+      "from": "github_forks",
+      "to": "vision_group",
+      "fromSide": "top",
+      "toSide": "left"
+    },
+    {
+      "id": "vision-to-ocr",
+      "from": "vision_group",
+      "to": "ocr_group",
+      "variant": "emphasis"
+    },
+    {
+      "id": "ocr-to-explain",
+      "from": "ocr_group",
+      "to": "explain_group"
+    },
+    {
+      "id": "explain-to-eval",
+      "from": "explain_group",
+      "to": "eval_security_group"
+    },
+    {
+      "id": "eval-to-agents",
+      "from": "eval_security_group",
+      "to": "agent_platform_group"
+    },
+    {
+      "id": "agents-to-systems",
+      "from": "agent_platform_group",
+      "to": "systems_group"
+    },
+    {
+      "id": "systems-to-output",
+      "from": "systems_group",
+      "to": "archify_outputs",
+      "label": "diagram and guide",
+      "variant": "emphasis"
+    },
+    {
+      "id": "assets-to-practice",
+      "from": "external_assets",
+      "to": "archify_outputs",
+      "label": "mark missing weights/data",
+      "variant": "dashed"
+    }
+  ]
+}

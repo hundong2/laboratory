@@ -1,0 +1,308 @@
+[
+  {
+    "Path": "Attention-Residuals",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "7498f1d73b562f96b3d17f2ccf4df40dcab22083fd3037fc225ebb1f0afd779b",
+    "ArtifactSha256": "82c31bd98222191001961e7d660367c494019efbd2ea733a255f6f4ebbd51ed8",
+    "Error": ""
+  },
+  {
+    "Path": "awesome-free-ai-course-notes",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "c1d67e3b0c65ba00f799a7e69c6e42ebf39bc115f1508a9170b6f60a183ca293",
+    "ArtifactSha256": "0b27ceb4253fc2888e5cb8cff962e90afa01ae367dd007bbf8e35353aaaa4762",
+    "Error": ""
+  },
+  {
+    "Path": "codex-security",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "9266ba6b6e572f0ef30c8bd026f3e2806b35e59a57c2d9e9b4121286a281c0de",
+    "ArtifactSha256": "08c1d8b794786b33077359374e1e360bb3808c440b243bd41d973613916dff74",
+    "Error": ""
+  },
+  {
+    "Path": "deepeval",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "36e5b72978c81c73b94eb80b74966d16cad4ee216234e4d240dd6c713bbfa252",
+    "ArtifactSha256": "62445c80e9e5882fe0bd3fec2a6333555d3b753517f11d323d0dc06ba33ce688",
+    "Error": ""
+  },
+  {
+    "Path": "detectron2",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "fb81621896bcfa0c139707226225df1eb8c2224d3a6e37297a37055f940f5735",
+    "ArtifactSha256": "e08416dc635208c913da3665b60a0f11fd06342a3bdfe0d36c5b89432d571193",
+    "Error": ""
+  },
+  {
+    "Path": "GOT-OCR2.0",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "cc2de683d5da28ab947e5290c1af70d7669b0c78a32a30802a1f7c214c150bed",
+    "ArtifactSha256": "33a0953fe643cb91e96b5a7c763a6eb3fda4a90a1380fab1bfb3e63b8ae8ccd2",
+    "Error": ""
+  },
+  {
+    "Path": "Graft",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "c2e93a63bd7bad428dc82f8201d6743ee03d2d03f87c11db164051603cd05b2d",
+    "ArtifactSha256": "0c61b90b9564e355fcd524ef9818fb8b17edab869a00d06c3a7c22d0636ea902",
+    "Error": ""
+  },
+  {
+    "Path": "graphify",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "4436505758bf0bc2a3c5a190665ac23c3a9360eaa9d6626327ad9441a32b89a3",
+    "ArtifactSha256": "3d813fa56a32e26bbeffad5fae0fd7d48dfcf61ecba9029616c081af78ad6394",
+    "Error": ""
+  },
+  {
+    "Path": "h3.c",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "08ac5861186d83dda49294b256be65952b40ef13ad919ad3005ffaef9e811aac",
+    "ArtifactSha256": "ae1d7ab922e466bca8a261aed6911f303eb37453626fe30903fb23755309d82f",
+    "Error": ""
+  },
+  {
+    "Path": "Hands-On-AI-Engineering",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "fc7717f1dbe95297e5e61e9f6ad4289d25fcafbb3d73d6281f0bd573f92de5d0",
+    "ArtifactSha256": "3e9ed7623ee1b54f63ca3c447903c75b4ade1799da29363acd5f792438da4036",
+    "Error": ""
+  },
+  {
+    "Path": "ijepa",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "327a2ee415296c18379c939d2e8a376bc06b8f659d01356685cb86875deeb5c6",
+    "ArtifactSha256": "8af0c19eaaa77d37fa3a25a74c4f3833d262cc3a19943f58a99e3d9fa842bc08",
+    "Error": ""
+  },
+  {
+    "Path": "image-pipes",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "8d1ece50ba4d54a6c90f9a07d5ccf0a194f05e99926d925e2666c0442ea2413a",
+    "ArtifactSha256": "3ff68f9fda332e6cefa9bd7c94367894a6384077fe82b4cff60768683fa95562",
+    "Error": ""
+  },
+  {
+    "Path": "kimi-k3-in-c",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "b397f096ade7906edfe119fab7301294c647556a0d9e760c1ccdbb6be9322214",
+    "ArtifactSha256": "8406b6392742bc7b519a124ae5f7ab38a918e5e8208a918b575183e74616ca90",
+    "Error": ""
+  },
+  {
+    "Path": "kimodo",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "2944b010a922823c66908459cbee09aecaea6027509cdd43b58c82b9cc0d490d",
+    "ArtifactSha256": "3fe081971b906b56eda5e93b102db7b43575465c1f85df3ef6499d57ef846fb4",
+    "Error": ""
+  },
+  {
+    "Path": "labs-OO-Agents",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "e2bc808fdc5472c1dc1fd383166191899845e25f3b9ba54af06518b1a0e12d59",
+    "ArtifactSha256": "ec1a2efb124dd0118f9e4d3a553b9ba0276e2dfc87506467d80102bb87568caf",
+    "Error": ""
+  },
+  {
+    "Path": "lightly-studio",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "c7b7ab15272cf4bdea1c752ec749413da687d16e14d106c663a8805a86bfa353",
+    "ArtifactSha256": "a44a2d884201b59809ad04636b85bbdf239063edcb2f18c1953a4ff0d2cdb578",
+    "Error": ""
+  },
+  {
+    "Path": "marker",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "5f3efc4062bde89ed711cf2cb2de39c833e5302b78db7a4e7d6bd06b401c1c0b",
+    "ArtifactSha256": "9829cacd7b72d1d03ac4bfafb578d98f99df040bac85967caba5ca25a714a692",
+    "Error": ""
+  },
+  {
+    "Path": "Maui",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "a5765592340077253982a607d7a651cc4521253811f29526352545d3beb1cfbf",
+    "ArtifactSha256": "9a4a65f98c0a64d05e88da6dea36bec0857ba622f05f99892731ffc98e725e5a",
+    "Error": ""
+  },
+  {
+    "Path": "modular",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "49128b76cfa48f91d178dfe5ee9df424f2454d9cbf901e63093251ba46464acf",
+    "ArtifactSha256": "16de4fd86a6dd6c726e6aa6360c139413f250aca9f59df308701f39e98cee548",
+    "Error": ""
+  },
+  {
+    "Path": "monoscope",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "28fd339c672168faf672d7061271c8893ea4234507b8dab25776f28a378e030c",
+    "ArtifactSha256": "de9a3539df51fc94335891c00c1407cc62aa5de508b08adde9ca1396296b7a25",
+    "Error": ""
+  },
+  {
+    "Path": "mousecrack",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "e30aed739d0c211ab5d3b07dcf42d1bc55d87d88bbcf02bc29613bc003462a1f",
+    "ArtifactSha256": "20d3754d89dbe9126c3988fa0cab61b342effa53a2d828447ea3084e3e6c5118",
+    "Error": ""
+  },
+  {
+    "Path": "openchamber",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "b0626c0998cd7fc377ea6b51f1a817820ee4eda69ea5f6a7864570538673f150",
+    "ArtifactSha256": "959c311eaa8c5bf4ceab1b60469f4b3f1f532f442118a4b7ae055bd512e14ff9",
+    "Error": ""
+  },
+  {
+    "Path": "OpenFabrik",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "0f352116b52b889f7b704a87f062e45e3ad89433ef56283bd3fa4c1658d35b2c",
+    "ArtifactSha256": "eb127a952cb362c3808240d56d305867f804c8b34cd484420a7c6a99601840ec",
+    "Error": ""
+  },
+  {
+    "Path": "openhuman",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "4fa1de37b6b2ef86387d207f4189952917907b5cf7a20e69039123375d714c73",
+    "ArtifactSha256": "32c6fe4a8aa98be6becf0f555961898a17410746d152153ea3df01e9370bf63f",
+    "Error": ""
+  },
+  {
+    "Path": "openship",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "544170d6b42249b0211e1556ba47409091dc3648f6d51c8434ccd60a929fe926",
+    "ArtifactSha256": "8ea43f34daf2ad268df6ec62cf860c239efe99cdbde16199357e8df36689b654",
+    "Error": ""
+  },
+  {
+    "Path": "orca",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "01d9b902befe38f3cafc7cbc35a175f41a8e85e8bc64757cc02fc830e5df838b",
+    "ArtifactSha256": "a3c40f8f5663b423b52ad8fedd7a2a8b4b124436274f72c895938a470f83bf65",
+    "Error": ""
+  },
+  {
+    "Path": "pocket-tts",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "522fcbd04d372fee28ce29663c63352749600c066374c8882e459e0110c7e048",
+    "ArtifactSha256": "ba36dac7e20212f280eacf57edba9b3fc79bc1e6f64f94b42b6d5fc10fb48525",
+    "Error": ""
+  },
+  {
+    "Path": "polka",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "65e942dc857e3bd57ebf7175dc9a440d8700e3bcc72dc174b2de4864672634dc",
+    "ArtifactSha256": "d1e45427031125cc607471870ddca5bd0b56a8037139302085f95f3d9477e3fa",
+    "Error": ""
+  },
+  {
+    "Path": "SenseNova-Vision",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "a9c4411fb4142087f96856ac1c8c0ca7303710767260f62192db32d8a8db946d",
+    "ArtifactSha256": "28eb5e4a310ea795ab1390e14671bdee6475ae3640ef19c95dabf6e44ed68fdf",
+    "Error": ""
+  },
+  {
+    "Path": "shepherd",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "ea306ab017bba9a8738c57ca5ecc0762426f53bad1f756531bf851003c5a795d",
+    "ArtifactSha256": "fe9cf7a9e62afcb90f9f755e3a93b22b3618f28d822371907af5aeda7a88b37c",
+    "Error": ""
+  },
+  {
+    "Path": "tabfm",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "24886c2064cf0b0e142ceccfcf70d047f455c9795b50dc5719642846dfd35719",
+    "ArtifactSha256": "f98b2f8659c700ad05e14af3f09e31058e0252aeb062493f71b43a8cfbd6937c",
+    "Error": ""
+  },
+  {
+    "Path": "transformer-explainer",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "c65b5afd9bcd9cbfb5bf9758b4e0ed0c91897c28ebc616619109c46c45ab077f",
+    "ArtifactSha256": "66092dbf9b7eb2cb92fe4168fb6d413888a8c6a348931adc15f5333dadd6a63c",
+    "Error": ""
+  },
+  {
+    "Path": "TripoSplat",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "5c823631cb665313489ed68471d968700f41c9b2534661482276fef1e8e6465b",
+    "ArtifactSha256": "90641e7e9fad5801c0052844079a065251ff08d0ed660eb4f1b1c0cc007064f1",
+    "Error": ""
+  },
+  {
+    "Path": "Unlimited-OCR",
+    "Validation": "passed",
+    "Delivery": "passed",
+    "BrowserEvidence": "passed",
+    "SpecificationSha256": "dc2fe10b687e87165eb247949840adb80f1cf6d1058f036ac54763962f3d87b3",
+    "ArtifactSha256": "411ad5ebb5a3da82fc03aaf0b30d002aa1052d778f8ddfc59b282cc04fdf8e89",
+    "Error": ""
+  }
+]

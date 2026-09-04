@@ -4,6 +4,12 @@
 
 ## TODO
 
+- [ ] [AI-native SDLC 플레이북 번역·실습](ai-native-sdlc-playbook/README.md) - 2026-09-05
+- [ ] [hundong2 fork submodule Archify 아키텍처 지도](hundong2-submodule-archify/README.md) - 2026-09-03
+- [ ] [EvoHarness-RL 장기 에이전트 런타임 하네스 학습](evoharness-rl/README.md) - 2026-08-30
+- [ ] [QRNG·QKD 기반 양자암호통신 기술 가이드](quantum-randomness-key-distribution/README.md) - 2026-08-27
+- [ ] [증명과 수학의 진보 번역·실습](on-proof-and-progress-in-mathematics/README.md) - 2026-08-27
+- [ ] [Ornith-1.5-9B 로컬 코딩 LLM 실습](ornith-1-5-9b-practice/README.md) - 2026-08-24
 - [ ] [OpenHuman 한국어 번역과 local-first agent harness 학습 가이드](https://github.com/hundong2/openhuman/blob/8c7110fc0b27939f78018a4752d059de201e080c/guide/README.md) - 2026-08-23
 - [ ] [Andrew Ng의 AI Engineering Skills Map 번역과 실습](ai-engineering-skills-map/README.md) - 2026-08-22
 - [ ] [Augmented Flow와 멀티모달 비전 학습 에이전트](augmented-flow-multimodal-vision-agents/README.md) - 2026-08-22

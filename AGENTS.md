@@ -1,3 +1,5 @@
+<!-- rumdl-disable MD013 -->
+
 # AGENTS.md - Content Learning Harness
 
 이 파일은 이 레포에서 작업하는 모든 에이전트가 따라야 하는 표준 작업 하네스입니다. 상위 시스템/개발자 지시가 우선하지만, 이 레포 안의 분석 및 학습 자료 생성 작업은 아래 계약을 기본값으로 삼습니다.
@@ -238,7 +240,25 @@ git submodule update --init --recursive <repository-name>
 - 기초 문법 확인에서 끝내지 않고 최소 실행, 핵심 기능 활용, 오류 처리 또는 고급 패턴으로 난이도가 이어지게 구성한다.
 - 새 예제가 실제 제품 코드나 빌드에 영향을 주지 않도록 격리하고, 가능한 범위에서 저장소의 공식 테스트·lint·format 명령으로 검증한다.
 
-### 5. Commit and Push to Main
+### 5. Archify Code Architecture Documentation
+
+- submodule 내부의 번역, 가이드와 예제 작업을 마친 뒤, commit 전에 최상단 저장소의 [`architect.md`](architect.md)를 처음부터 끝까지 읽고 재사용 프롬프트로 사용한다.
+- 현재 세션에 제공된 `archify` 스킬의 `SKILL.md`를 직접 읽고 따른다. `architect.md`가 스킬 지침을 대체하지 않으며, 둘이 충돌하면 현재 설치된 스킬 지침을 우선한다.
+- 대상 submodule 안에 `docs/archify/` 폴더를 만들고 실제 코드 증거에 기반한 다음 산출물을 생성한다. `docs/`가 없으면 함께 생성한다.
+  - `docs/archify/architecture.json`: `architecture` schema와 `showcase` 품질을 사용하는 원본 명세
+  - `docs/archify/architecture.html`: Archify `deliver`로 생성하고 검증한 self-contained viewer
+  - `docs/archify/README.md`: 분석 revision, 범위, 코드 근거, 실행 흐름, 신뢰 경계, 제한 사항과 검증 receipt
+  - `visual-check`가 생성한 receipt, contact sheet, light/dark screenshot sidecar
+- README 설명만 요약해 일반적인 그림을 만들지 않는다. 실행 진입점, import·호출·등록 관계, 저장소와 외부 I/O, 구성·배포, 테스트 증거를 코드에서 확인하고 component `sources`에 상대 경로와 가능한 줄 번호를 기록한다.
+- 저장소 URL과 작업 당시의 40자리 commit SHA를 `architecture.json`의 `meta.repository`에 기록한다. 확인할 수 없는 런타임 구성, 프로토콜, 배포 환경과 소유권은 추측하지 않는다.
+- 주요 component는 원칙적으로 6~12개로 제한하고 하나의 대표 실행 경로를 중심으로 그린다. 저장소가 복잡하면 분석 범위를 `docs/archify/README.md`에 명시하고 저가치 node와 관계를 제거한다.
+- 작성 언어는 한국어로 하되 코드 식별자와 공식 제품명은 보존한다. 한국어는 Archify Viewer locale으로 지원되지 않으므로 `meta.locale`을 생략하고 고정 Viewer UI와 `<html lang>`의 영어 fallback을 `docs/archify/README.md`에 명시한다.
+- 후보 생성 후 매 수정마다 `validate ... --repo-root <submodule> --quality showcase --json`을 실행한다. 9/9 artifact checks, composition error 0, warning 0을 충족한 고정 후보에만 `deliver`를 실행한다.
+- 성공한 현재 deliver 산출물에만 `visual-check`를 실행하고, 생성된 light/dark 이미지를 실제 이미지 도구로 검토한다. deterministic delivery, automated browser evidence, perceptual visual review 상태를 서로 구분해 보고한다.
+- 원본 `README.md`, 한국어 번역 README와 `guide/README.md`에 `docs/archify/README.md` 또는 `docs/archify/architecture.html` 링크를 추가한다.
+- 문서·데이터 전용 저장소처럼 실행 코드 아키텍처가 확인되지 않으면 허구의 component diagram을 생성하지 않는다. `architect.md`의 예외 규칙을 따르고 제한 사항을 보고한다.
+
+### 6. Commit and Push to Main
 
 - GitHub 저장소 내부 작업은 기본 브랜치인 `main`에서 수행한다. 별도 작업 브랜치나 pull request를 만들지 않는다.
 - 작업을 시작하기 전에 `main`을 checkout하고 원격을 fetch한 뒤 로컬 `main`이 `origin/main`에서 안전하게 fast-forward 가능한 상태인지 확인한다.
@@ -252,7 +272,7 @@ git submodule update --init --recursive <repository-name>
 - 인증 실패, push 권한 부족, branch protection 또는 원격 오류가 발생하면 force push로 우회하지 말고 정확한 오류와 사용자가 해야 할 조치를 보고한다.
 - submodule과 상위 저장소를 모두 변경했다면 submodule 변경을 먼저 해당 저장소의 `main`에 commit·push하고, 그 commit을 가리키는 상위 저장소의 gitlink와 `.gitmodules` 변경도 상위 `main`에 commit·push한다.
 
-### 6. Submodule Completion Check
+### 7. Submodule Completion Check
 
 - [ ] GitHub 저장소가 submodule로 등록되었는가?
 - [ ] `init`과 재귀 `update`를 완료했는가?
@@ -263,6 +283,11 @@ git submodule update --init --recursive <repository-name>
 - [ ] `guide/README.md`와 단계별 학습 자료가 있는가?
 - [ ] 가능한 경우 저장소 기반 언어로 실행 가능한 예제·실습을 만들었는가?
 - [ ] 원본 README와 한국어 번역 README에서 가이드로 이동할 수 있는가?
+- [ ] 최상단 `architect.md`와 현재 `archify` 스킬 지침을 모두 읽었는가?
+- [ ] submodule의 실제 코드 근거로 `docs/archify/architecture.json`, `docs/archify/architecture.html`, `docs/archify/README.md`를 생성했는가?
+- [ ] Archify showcase validation이 9/9, error 0, warning 0이며 receipt를 기록했는가?
+- [ ] 성공한 deliver 산출물의 browser evidence와 perceptual visual review를 구분해 기록했는가?
+- [ ] 원본 README, 한국어 번역 README와 guide에서 `docs/archify/` 아키텍처 문서로 이동할 수 있는가?
 - [ ] submodule 내부 지침과 검증 명령을 준수했는가?
 - [ ] 최상단 `README.md`의 `TODO`에 submodule 학습 가이드 링크를 추가했는가?
 - [ ] 변경 사항을 해당 저장소의 `main`에 커밋했는가?
@@ -402,6 +427,7 @@ guide/
 - [ ] 분석, 요약, 기초 개념, 상세 정리, 용어, 학습 경로가 포함되었는가?
 - [ ] 여러 URL에 GitHub 저장소와 일반 사이트·논문이 섞인 경우 submodule/clone 없이 일반 사이트처럼 분석했는가?
 - [ ] GitHub 코드 분석이 포함된 경우 코드 리뷰, 사용 방법, 실행 흐름, 주의점이 작업 주제 폴더 안에 정리되었는가?
+- [ ] 단일 GitHub submodule 작업이면 `architect.md`를 참조해 Archify 코드 아키텍처 문서와 검증 증거를 submodule의 `docs/archify/`에 생성했는가?
 - [ ] 논문이 아닌 외국어 원문이면 `translation.ko.md`가 있는가?
 - [ ] 논문이 아닌 일반 웹사이트 URL이면 원문 언어와 관계없이 `translation.ko.md`가 있는가?
 - [ ] 논문 입력이면 일반 번역 파일 대신 `<논문 제목>.번역.md`가 생성되었는가?
@@ -438,6 +464,17 @@ guide/
 각 원문 문장 직후 같은 sentence ID의 한국어 번역을 배치한다.
 처음 등장하는 약어와 기술 용어는 원어, 한국어 번역과 논문 내 역할을 설명한다.
 수식, 인용, 수치, 단위와 가능성·부정 표현을 원문과 대조해 검수한다.
+```
+
+입력이 단일 GitHub 저장소이면 다음 요구를 prompt에 추가한다.
+
+```text
+GitHub Repository Workflow를 적용해 submodule 내부 번역, guide와 예제를 완성한다.
+그 뒤 최상단 architect.md를 재사용 프롬프트로 읽고 현재 archify 스킬을 적용한다.
+실제 코드 증거에 기반한 architecture.json, 검증된 architecture.html과 증거 문서를
+submodule의 docs/archify/에 만들고 원본·한국어 README 및 guide에서 링크한다.
+Archify의 deterministic validation, browser evidence와 perceptual visual review를
+서로 구분해 실제 receipt와 함께 보고한다.
 ```
 
 ## Quality Bar

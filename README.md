@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Diffusion OCR와 self-speculative decoding 번역·논문 아카이브](diffusion-ocr/README.md) - 2026-09-05
 - [ ] [AI-native SDLC 플레이북 번역·실습](ai-native-sdlc-playbook/README.md) - 2026-09-05
 - [ ] [hundong2 fork submodule Archify 아키텍처 지도](hundong2-submodule-archify/README.md) - 2026-09-03
 - [ ] [EvoHarness-RL 장기 에이전트 런타임 하네스 학습](evoharness-rl/README.md) - 2026-08-30

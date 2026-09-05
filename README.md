@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [DeepSeek-OCR 한국어 번역·실습·코드 아키텍처 가이드](https://github.com/hundong2/DeepSeek-OCR/blob/c94188aecc33cea8387ad80105fb04ac96195da8/guide/README.md) - 2026-09-05
 - [ ] [Diffusion OCR와 self-speculative decoding 번역·논문 아카이브](diffusion-ocr/README.md) - 2026-09-05
 - [ ] [AI-native SDLC 플레이북 번역·실습](ai-native-sdlc-playbook/README.md) - 2026-09-05
 - [ ] [hundong2 fork submodule Archify 아키텍처 지도](hundong2-submodule-archify/README.md) - 2026-09-03

@@ -100,3 +100,6 @@
 [submodule "openhuman"]
 	path = openhuman
 	url = https://github.com/hundong2/openhuman.git
+[submodule "DeepSeek-OCR"]
+	path = DeepSeek-OCR
+	url = https://github.com/hundong2/DeepSeek-OCR

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "위성 군집 통신 네트워크 기준 아키텍처",
+    "output": "network-architecture.html",
+    "quality_profile": "showcase",
+    "viewBox": [1380, 760],
+    "views": [
+      {
+        "id": "mission-data-path",
+        "label": "임무 데이터 경로",
+        "focus": ["user-terminal", "sat-access", "sat-relay", "ground-station", "mission-dc"],
+        "note": "사용자 데이터가 RF access, 위성 mesh, 지상국을 거쳐 임무 데이터센터로 이동한다."
+      },
+      {
+        "id": "control-path",
+        "label": "제어·운영 경로",
+        "focus": ["network-controller", "sat-access", "sat-relay", "ground-station", "mission-ops"],
+        "note": "지상 제어 정책과 TT&C가 전달되며, 단절 시 위성의 사전 승인 정책이 유지된다."
+      },
+      {
+        "id": "resilience-path",
+        "label": "복원력 경로",
+        "focus": ["sat-access", "sat-relay", "dtn-store", "ground-station", "backup-ground"],
+        "note": "광 링크 실패 시 RF ISL과 대체 지상국, DTN 저장 후 전달 경로를 사용한다."
+      }
+    ]
+  },
+  "components": [
+    {"id": "user-terminal", "type": "external", "label": "사용자 단말", "sublabel": "D2D · IoT · 임무 사용자", "pos": [60, 330], "size": [170, 78]},
+    {"id": "sat-access", "type": "cloud", "label": "접속 위성", "sublabel": "RF access · onboard router", "pos": [310, 330], "size": [190, 78], "tag": "LEO"},
+    {"id": "sat-relay", "type": "cloud", "label": "중계 위성군", "sublabel": "Optical/RF ISL mesh", "pos": [600, 330], "size": [190, 78], "tag": "LEO/MEO"},
+    {"id": "dtn-store", "type": "database", "label": "온보드 DTN 저장소", "sublabel": "BPv7 · CFDP · 우선순위", "pos": [600, 520], "size": [190, 78]},
+    {"id": "ground-station", "type": "backend", "label": "주 지상국", "sublabel": "RF/광 modem · SLE", "pos": [850, 330], "size": [180, 78]},
+    {"id": "backup-ground", "type": "backend", "label": "대체 지상국", "sublabel": "site diversity · failover", "pos": [850, 520], "size": [180, 78]},
+    {"id": "mission-dc", "type": "backend", "label": "임무 데이터센터", "sublabel": "ingest · processing · archive", "pos": [1120, 330], "size": [200, 78]},
+    {"id": "mission-ops", "type": "frontend", "label": "임무운영센터", "sublabel": "TT&C · telemetry · FDIR", "pos": [1120, 120], "size": [200, 78]},
+    {"id": "network-controller", "type": "security", "label": "Space SDN 제어기", "sublabel": "contact plan · signed policy", "pos": [760, 120], "size": [220, 78]},
+    {"id": "security-services", "type": "security", "label": "키·보안 서비스", "sublabel": "SDLS · BPSec · IPsec", "pos": [1120, 520], "size": [200, 78]}
+  ],
+  "boundaries": [
+    {"kind": "region", "label": "우주 구간", "wraps": ["sat-access", "sat-relay", "dtn-store"], "pad": 34},
+    {"kind": "region", "label": "지상 구간", "wraps": ["ground-station", "backup-ground", "mission-dc", "mission-ops", "network-controller", "security-services"], "pad": 34},
+    {"kind": "security-group", "label": "임무 신뢰 영역", "wraps": ["mission-dc", "mission-ops", "security-services"], "pad": 18}
+  ],
+  "connections": [
+    {"id": "terminal-access", "from": "user-terminal", "to": "sat-access", "label": "5G NTN / LoRa / RF", "variant": "emphasis", "labelAt": [270, 430]},
+    {"id": "optical-isl", "from": "sat-access", "to": "sat-relay", "label": "주 경로: Optical ISL", "variant": "emphasis", "labelAt": [550, 310]},
+    {"id": "rf-isl", "from": "sat-access", "to": "sat-relay", "label": "대체 경로: RF ISL", "variant": "dashed", "fromSide": "bottom", "toSide": "bottom", "via": [[405, 455], [695, 455]], "labelAt": [550, 470]},
+    {"id": "relay-store", "from": "sat-relay", "to": "dtn-store", "label": "단절 시 저장", "variant": "dashed", "labelAt": [820, 465]},
+    {"id": "relay-ground", "from": "sat-relay", "to": "ground-station", "label": "RF/광 downlink", "variant": "emphasis", "labelAt": [820, 422]},
+    {"id": "relay-backup", "from": "dtn-store", "to": "backup-ground", "label": "다음 contact 전달", "variant": "dashed", "labelAt": [820, 612]},
+    {"id": "ground-dc", "from": "ground-station", "to": "mission-dc", "label": "SLE RAF/RCF"},
+    {"id": "backup-dc", "from": "backup-ground", "to": "mission-dc", "label": "보호된 backhaul", "variant": "dashed"},
+    {"id": "ops-controller", "from": "mission-ops", "to": "network-controller", "label": "임무 정책"},
+    {"id": "controller-sat", "from": "network-controller", "to": "sat-access", "label": "서명된 route 정책", "variant": "security", "fromSide": "left", "toSide": "top", "via": [[730, 159], [730, 250], [405, 250]], "labelAt": [730, 212]},
+    {"id": "controller-ground", "from": "network-controller", "to": "ground-station", "label": "contact · flow 제어", "variant": "security", "fromSide": "bottom", "toSide": "top"},
+    {"id": "dc-ops", "from": "mission-dc", "to": "mission-ops", "label": "telemetry · event"},
+    {"id": "security-dc", "from": "security-services", "to": "mission-dc", "label": "키·인증 정책", "variant": "security"}
+  ],
+  "cards": [
+    {"dot": "cyan", "title": "데이터 평면", "items": ["RF access와 optical mesh가 주 경로", "RF ISL과 대체 지상국이 failover 제공"]},
+    {"dot": "violet", "title": "제어 평면", "items": ["contact plan으로 미래 경로 계산", "단절 시 onboard의 사전 승인 정책 실행"]},
+    {"dot": "rose", "title": "신뢰 경계", "items": ["SDLS는 링크, BPSec은 bundle, IPsec은 지상 IP 구간 보호", "명령 실행 결과는 link ACK와 별도 검증"]}
+  ]
+}

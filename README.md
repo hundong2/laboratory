@@ -4,6 +4,9 @@
 
 ## TODO
 
+- [ ] [누리호 성능을 고려한 Walker-Delta 군집위성 궤도설계 논문 해설·실습](kslv2-walker-delta-constellation/README.md) - 2026-09-10
+- [ ] [AEOS-Bench와 AEOS-Former 군집위성 스케줄링 논문 번역·실습](aeos-constellation-scheduling/README.md) - 2026-09-10
+- [ ] [위성 통신·네트워크·임베디드 시스템 Deep Dive](위성deepdive/README.md) - 2026-09-10
 - [ ] [Fast Weight Attention for Continual Learning 논문 번역·실습](fast-weight-attention-continual-learning/README.md) - 2026-09-05
 - [ ] [DeepSeek-OCR 한국어 번역·실습·코드 아키텍처 가이드](https://github.com/hundong2/DeepSeek-OCR/blob/c94188aecc33cea8387ad80105fb04ac96195da8/guide/README.md) - 2026-09-05
 - [ ] [Diffusion OCR와 self-speculative decoding 번역·논문 아카이브](diffusion-ocr/README.md) - 2026-09-05

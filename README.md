@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [Graph Engineering with ADK 유튜브 번역·실습](graph-engineering-with-adk/README.md) - 2026-09-11
 - [ ] [누리호 성능을 고려한 Walker-Delta 군집위성 궤도설계 논문 해설·실습](kslv2-walker-delta-constellation/README.md) - 2026-09-10
 - [ ] [AEOS-Bench와 AEOS-Former 군집위성 스케줄링 논문 번역·실습](aeos-constellation-scheduling/README.md) - 2026-09-10
 - [ ] [위성 통신·네트워크·임베디드 시스템 Deep Dive](위성deepdive/README.md) - 2026-09-10

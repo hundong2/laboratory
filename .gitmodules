@@ -103,3 +103,6 @@
 [submodule "DeepSeek-OCR"]
 	path = DeepSeek-OCR
 	url = https://github.com/hundong2/DeepSeek-OCR
+[submodule "minimind"]
+	path = minimind
+	url = https://github.com/hundong2/minimind.git

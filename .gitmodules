@@ -106,3 +106,6 @@
 [submodule "minimind"]
 	path = minimind
 	url = https://github.com/hundong2/minimind.git
+[submodule "gods-eye-view"]
+	path = gods-eye-view
+	url = https://github.com/hundong2/gods-eye-view.git

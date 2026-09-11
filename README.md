@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [ ] [God's Eye View 한국어 번역·실습·코드 아키텍처 가이드](https://github.com/hundong2/gods-eye-view/blob/ab25fb85f6a458004ac6b55313d09538d62ac18d/guide/README.md) - 2026-09-12
 - [ ] [Bundle Protocol Version 7(RFC 9171) 한국어 번역·해설·실습](bundle-protocol-version-7/README.md) - 2026-09-11
 - [ ] [MiniMind 한국어 번역·실습·코드 아키텍처 가이드](https://github.com/hundong2/minimind/blob/4148a030868944678b437b7b762f218efa7f0640/guide/README.md) - 2026-09-11
 - [ ] [Graph Engineering with ADK 유튜브 번역·실습](graph-engineering-with-adk/README.md) - 2026-09-11

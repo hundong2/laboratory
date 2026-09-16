@@ -4,6 +4,8 @@
 
 ## TODO
 
+- [ ] [GzDRL: Gazebo 기반 재현 가능한 심층강화학습 논문 번역·해설·실습](gz-drl-reproducible-gazebo-rl/README.md) - 2026-09-16
+
 - [ ] [양자 소프트웨어 전문인력 학습 로드맵](quantum-software-career-roadmap/README.md) - 2026-09-13
 - [ ] [God's Eye View 한국어 번역·실습·코드 아키텍처 가이드](https://github.com/hundong2/gods-eye-view/blob/ab25fb85f6a458004ac6b55313d09538d62ac18d/guide/README.md) - 2026-09-12
 - [ ] [Bundle Protocol Version 7(RFC 9171) 한국어 번역·해설·실습](bundle-protocol-version-7/README.md) - 2026-09-11

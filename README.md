@@ -4,6 +4,8 @@
 
 ## TODO
 
+- [ ] [ARTEMIS 안드로이드 자동화 한국어 학습 가이드](artemis/guide/README.md) - 2026-09-17
+
 - [ ] [GzDRL: Gazebo 기반 재현 가능한 심층강화학습 논문 번역·해설·실습](gz-drl-reproducible-gazebo-rl/README.md) - 2026-09-16
 
 - [ ] [양자 소프트웨어 전문인력 학습 로드맵](quantum-software-career-roadmap/README.md) - 2026-09-13

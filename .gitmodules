@@ -112,3 +112,6 @@
 [submodule "artemis"]
 	path = artemis
 	url = https://github.com/hundong2/artemis.git
+[submodule "px4-ros2-drone-nav"]
+	path = px4-ros2-drone-nav
+	url = https://github.com/hundong2/px4-ros2-drone-nav.git

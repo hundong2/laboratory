@@ -4,6 +4,8 @@
 
 ## TODO
 
+- [ ] [PX4 ROS 2 Drone Navigation 한국어 번역·실습·코드 아키텍처 가이드](https://github.com/hundong2/px4-ros2-drone-nav/blob/7dc85a0b502c40cb45d97bdc30cbb3a292df7305/guide/README.md) - 2026-09-20
+
 - [ ] [R4T: RL-Compiled Diffusion 기반 속성 정렬 Fan-Out 검색](r4t-rl-compiled-diffusion-retrieval/README.md) - 2026-09-19
 
 - [ ] [ARTEMIS 안드로이드 자동화 한국어 학습 가이드](https://github.com/hundong2/artemis/blob/fa539b60ce0b113eeb267b82c35f513346d585f2/guide/README.md) - 2026-09-17

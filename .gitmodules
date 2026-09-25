@@ -118,3 +118,6 @@
 [submodule "Understand-Anything"]
 	path = Understand-Anything
 	url = https://github.com/hundong2/Understand-Anything.git
+[submodule "autoresearch"]
+	path = autoresearch
+	url = https://github.com/hundong2/autoresearch.git

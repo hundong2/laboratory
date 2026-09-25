@@ -4,6 +4,8 @@
 
 ## TODO
 
+- [ ] [Autoresearch 한국어 번역·실습·코드 아키텍처 가이드](https://github.com/hundong2/autoresearch/blob/d9a5d4dc7a4607039956b7a352b3d615061697d3/guide/README.md) - 2026-09-25
+
 - [ ] [Understand Anything 한국어 번역·실습·코드 아키텍처 가이드](https://github.com/hundong2/Understand-Anything/blob/847b6ac604e08dcae7b40f792a45fc228ca2b884/guide/README.md) - 2026-09-25
 
 - [ ] [SalesRLAgent 실시간 영업 전환 예측 논문 번역·비판적 실습](salesrlagent-sales-conversion/README.md) - 2026-09-20

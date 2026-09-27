@@ -4,6 +4,10 @@
 
 ## TODO
 
+- [ ] [MA-DRL Routing Simulator 한국어 안내·코드 실습·Archify 아키텍처](https://github.com/hundong2/MA-DRL_Routing_Simulator/blob/d6b05a0c16d7ad5bd1a2b38f5a400d4e793bcb87/guide/README.md) - 2026-09-27
+
+- [ ] [위성망 MA-DRL 라우팅 시뮬레이터 논문 번역·지연·큐·Q-routing 실습](ma-drl-satellite-routing/README.md) - 2026-09-27
+
 - [ ] [Intrinsic Core 한국어 번역·C++ 실습·ICON 코드 아키텍처 가이드](https://github.com/hundong2/intrinsic-core/blob/fba2a294979fd45672b66c3008ade499d6680b17/guide/README.md) - 2026-09-27
 
 - [ ] [Autoresearch 한국어 번역·실습·코드 아키텍처 가이드](https://github.com/hundong2/autoresearch/blob/d9a5d4dc7a4607039956b7a352b3d615061697d3/guide/README.md) - 2026-09-25

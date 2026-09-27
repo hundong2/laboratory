@@ -124,3 +124,7 @@
 [submodule "intrinsic-core"]
 	path = intrinsic-core
 	url = https://github.com/hundong2/intrinsic-core.git
+[submodule "MA-DRL_Routing_Simulator"]
+	path = MA-DRL_Routing_Simulator
+	url = https://github.com/hundong2/MA-DRL_Routing_Simulator.git
+	shallow = true

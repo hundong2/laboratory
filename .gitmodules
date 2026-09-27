@@ -121,3 +121,6 @@
 [submodule "autoresearch"]
 	path = autoresearch
 	url = https://github.com/hundong2/autoresearch.git
+[submodule "intrinsic-core"]
+	path = intrinsic-core
+	url = https://github.com/hundong2/intrinsic-core.git

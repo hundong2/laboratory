@@ -128,3 +128,6 @@
 	path = MA-DRL_Routing_Simulator
 	url = https://github.com/hundong2/MA-DRL_Routing_Simulator.git
 	shallow = true
+[submodule "VoiceStudio"]
+	path = VoiceStudio
+	url = https://github.com/hundong2/VoiceStudio.git

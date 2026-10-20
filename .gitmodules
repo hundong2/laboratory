@@ -131,3 +131,6 @@
 [submodule "VoiceStudio"]
 	path = VoiceStudio
 	url = https://github.com/hundong2/VoiceStudio.git
+[submodule "harness-engineering-101"]
+	path = harness-engineering-101
+	url = https://github.com/hundong2/harness-engineering-101.git

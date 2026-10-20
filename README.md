@@ -4,6 +4,8 @@
 
 ## TODO
 
+- [ ] [Harness Engineering 101 한국어 학습 안내·Python 실습·코드 아키텍처](harness-engineering-101/guide/README.md) - 2026-10-20
+
 - [ ] [VoiceStudio 한국어 번역·단계별 실습·코드 아키텍처](https://github.com/hundong2/VoiceStudio/blob/9be0ae71951824217c7208bcc4a0f72f3b201c35/guide/README.md) - 2026-09-27
 
 - [ ] [MA-DRL Routing Simulator 한국어 안내·코드 실습·Archify 아키텍처](https://github.com/hundong2/MA-DRL_Routing_Simulator/blob/d6b05a0c16d7ad5bd1a2b38f5a400d4e793bcb87/guide/README.md) - 2026-09-27

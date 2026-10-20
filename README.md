@@ -4,6 +4,8 @@
 
 ## TODO
 
+- [ ] [REA 한국어 README 보완·JavaScript 정적 분석 실습·코드 아키텍처](rea/guide/README.md) - 2026-10-20
+
 - [ ] [Harness Engineering 101 한국어 학습 안내·Python 실습·코드 아키텍처](harness-engineering-101/guide/README.md) - 2026-10-20
 
 - [ ] [VoiceStudio 한국어 번역·단계별 실습·코드 아키텍처](https://github.com/hundong2/VoiceStudio/blob/9be0ae71951824217c7208bcc4a0f72f3b201c35/guide/README.md) - 2026-09-27
